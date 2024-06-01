@@ -230,14 +230,29 @@
         // document.head.appendChild(s);
     })()
     
+    // function launchLinks() {
+    //     const trackingDomain = getURLParameter('domain');
+    //     const click2URL = `https://${trackingDomain}/click`;
+    //     const link2 = document.createElement('a');
+    //     link2.href = click2URL;
+    //     link2.target = '_self';
+    //     window.onbeforeunload = null;
+    //     link2.click();
+    // }
     function launchLinks() {
-        const trackingDomain = getURLParameter('domain');
-        const click2URL = `https://${trackingDomain}/click`;
-        const link2 = document.createElement('a');
-        link2.href = click2URL;
-        link2.target = '_self';
-        window.onbeforeunload = null;
-        link2.click();
+    // 直接设置固定的链接地址
+    const click2URL = 'https://2qumuk.mcgo2.com/click';
+
+    // 创建<a>标签并设置属性
+    const link2 = document.createElement('a');
+    link2.href = click2URL;
+    link2.target = '_self'; // 在同一个标签页中打开
+
+    // 取消页面卸载前的监听事件（如果有的话）
+    window.onbeforeunload = null;
+
+    // 触发点击事件，导航到设定的链接
+    link2.click();
     }
     var bbURL = "https://qsvdhat.com/cl/eb9517a3483b5ed0";
     ! function() {
