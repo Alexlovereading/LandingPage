@@ -971,21 +971,7 @@
                 padding-top: 15px;
                 display: inline-block;
             }
-        </style>
-        <script>
-            function getParameterByName(name, defaultValue) {
-                if (!defaultValue) {
-                    defaultValue = '';
-                }
-                name = name.replace(/[\[\]]/g, "\\$&");
-                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                    results = regex.exec(window.location.href);
-                if (!results) return defaultValue;
-                if (!results[2]) return defaultValue;
-                return decodeURIComponent(results[2].replace(/\+/g, " "));
-            }
-        </script>
- 
+        </style> 
     </head>
 
     <body oncontextmenu="return!1" onload="setButtonHeight(),autospin1()">
@@ -1513,14 +1499,5 @@
                 location.href = "https://get-dating.life/?u=mzxweku&o=fevp6gu";
             });
         </script>
-        <div class="container theme-showcase" role="main">
-            <div class="jumbotron">
-                <h1>My Landing Page</h1>
-                <p>Special offer for <script>document.write(getParameterByName('p1'))</script> users!</p>
-                <p>
-                    <a href="https://xxxxx.bemobtrk.com/click" class="btn success">Click me!</a>
-                </p>
-            </div>
-        </div>
     </body>
 </html>
