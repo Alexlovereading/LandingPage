@@ -1,0 +1,591 @@
+@import url('css.css');
+
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	margin: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+	display: block
+}
+
+audio, canvas, progress, video {
+	display: inline-block
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0
+}
+
+progress {
+	vertical-align: baseline
+}
+
+[hidden] {
+	display: none
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects
+}
+
+a:active, a:hover {
+	outline-width: 0
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted
+}
+
+b, strong {
+	font-weight: inherit;
+	font-weight: bolder
+}
+
+dfn {
+	font-style: italic
+}
+
+h1 {
+	font-size: 2em;
+	margin: .67em 0
+}
+
+mark {
+	background-color: #ff0;
+	color: #000
+}
+
+small {
+	font-size: 80%
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+
+sub {
+	bottom: -.25em
+}
+
+sup {
+	top: -.5em
+}
+
+img {
+	border-style: none
+}
+
+svg:not(:root) {
+	overflow: hidden
+}
+
+code, kbd, pre, samp {
+	font-family: monospace, monospace;
+	font-size: 1em
+}
+
+figure {
+	margin: 1em 40px
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible
+}
+
+button, input, select, textarea {
+	font: inherit;
+	margin: 0
+}
+
+optgroup {
+	font-weight: 700
+}
+
+button, input {
+	overflow: visible
+}
+
+button, select {
+	text-transform: none
+}
+
+[type=reset], [type=submit], button, html [type=button] {
+	-webkit-appearance: button
+}
+
+[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+	border-style: none;
+	padding: 0
+}
+
+fieldset {
+	border: 1px solid silver;
+	margin: 0 2px;
+	padding: .35em .625em .75em
+}
+
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal
+}
+
+textarea {
+	overflow: auto
+}
+
+[type=checkbox], [type=radio] {
+	box-sizing: border-box;
+	padding: 0
+}
+
+[type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px
+}
+
+body, html {
+	height: 100%
+}
+
+* {
+	box-sizing: border-box
+}
+
+*, h1 {
+	margin: 0;
+	padding: 0
+}
+
+h1, h2 {
+	font-size: 2.4em;
+	line-height: 1.2
+}
+
+.primary {
+	color: #d63c34 !important
+}
+
+.accent {
+	color: #f9c700 !important
+}
+
+.bottom__content, .top__content {
+	width: 90%;
+	max-width: 1440px;
+	margin: 0 auto
+}
+
+ul {
+	list-style-type: none
+}
+
+img, ul li {
+	display: inline-block
+}
+
+img {
+	max-width: 50%
+}
+
+.hidden {
+	display: none
+}
+
+.btn-block {
+    background: #1e92e7;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px auto 5px auto;
+    max-width: 280px;
+    width: 100%;
+    outline: none;
+    padding: 20px 10px;
+    -webkit-animation-name: button;
+    -webkit-animation-duration: 3s;
+    animation-name: button;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    position: relative;
+    border-bottom: 4px solid #0a5d9a;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.btn-block:hover {
+	background: #d8443c
+}
+
+.btn-block:active {
+	background: #c83028
+}
+
+.btn-no, .btn-yes {
+	display: inline-block;
+	width: 40%;
+	padding: 20px 0;
+	font-size: 1.4em;
+	color: #fff;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 700;
+	margin-bottom: 50px;
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	width: 100%;
+	martin-bottom: 10px;
+
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px auto 5px auto;
+    max-width: 280px;
+    width: 100%;
+    outline: none;
+    padding: 20px 10px;
+    -webkit-animation-name: button;
+    -webkit-animation-duration: 3s;
+    animation-name: button;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    position: relative;
+    border-bottom: 4px solid #0a5d9a;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.btn-no:hover, .btn-yes:hover {
+	background: #d8443c
+}
+
+.btn-no:active, .btn-yes:active {
+	background: #c83028
+}
+
+.btn-yes {
+	/*margin-right: 5%;*/
+    background: #1e92e7;
+
+}
+}
+
+.btn-yes:hover {
+	background: #d8443c
+}
+
+.btn-yes:active {
+	background: #c83028
+}
+
+.btn-no {
+	background: rgba(0, 0, 0, .4)
+}
+
+.btn-no:hover {
+	background: rgba(0, 0, 0, .3)
+}
+
+.btn-no:active {
+	background: rgba(0, 0, 0, .4)
+}
+
+body {
+	min-width: 320px;
+	font-size: 16px;
+	line-height: 1.2;
+	font-family: 'Lato', sans-serif;
+	overflow-x: hidden;
+	background: #fafafa;
+	background-size: cover;
+	background-attachment: fixed
+}
+body.fontru {
+	font-family: 'Roboto', sans-serif;
+}
+.main {
+	width: 100%;
+	height: 100%;
+	padding: 20px 0 0
+}
+
+.main .box {
+	width: 90%;
+	max-width: 620px;
+	margin: 0 auto;
+	text-align: center
+}
+
+.main .box__header {
+	padding-top: 20px
+}
+
+.main .box__body {
+	padding-top: 20px;
+	max-width: 80%;
+	margin: 0 auto;
+	margin-bottom: 25px
+}
+
+.main .box__body p {
+	font-size: 1.5em
+}
+
+.main .box__body .inputbox {
+	text-align: left;
+	padding: 5px 0;
+	font-size: 1.3125em
+}
+
+.main .box__body .inputbox label {
+	padding-left: 10px
+}
+
+.main .box__body .inputbox label:before {
+	content: "";
+	display: inline-block;
+	width: 21px;
+	height: 21px;
+	position: relative;
+	left: -5px;
+	background: #fff;
+	background-border-radius: 4px;
+	box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 hsla(0, 0%, 100%, .8)
+}
+
+.main .box__body .inputbox input {
+	display: none
+}
+
+.main .box__body .inputbox input:checked + label:before {
+	content: "\2713";
+	font-size: 21px;
+	color: #fff;
+	background: #d63c34;
+	text-align: center;
+	line-height: 21px
+}
+
+.main .box__footer p {
+	font-size: 1.5em;
+	font-weight: 700
+}
+
+.main .box__footer .btn-wrapper {
+	margin-top: 25px;
+	margin-bottom: 50px
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+	h1, h2 {
+		font-size: 1.2em
+	}
+
+	img {
+		max-width: 60%
+	}
+
+	.btn-no, .btn-yes {
+		font-size: 1.3125em;
+	
+	}
+
+	body {
+
+	}
+
+	.main .box__header {
+		padding-top: 15px
+	}
+
+	.main .box__body {
+		padding-top: 15px;
+		max-width: 100%;
+		margin-bottom: 20px
+	}
+
+	.main .box__body p {
+		font-size: 1.3125em
+	}
+
+	.main .box__body .inputbox {
+		text-align: left;
+		padding: 5px 0;
+		font-size: 1.3125em
+	}
+
+	.main .box__body .inputbox label {
+		padding-left: 10px
+	}
+
+	.main .box__body .inputbox label:before {
+		content: "";
+		display: inline-block;
+		width: 21px;
+		height: 21px;
+		position: relative;
+		left: -5px;
+		background: #fff;
+		border-radius: 4px;
+		box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 hsla(0, 0%, 100%, .8)
+	}
+
+	.main .box__body .inputbox input {
+		display: none
+	}
+
+	.main .box__body .inputbox input:checked + label:before {
+		content: "\2713";
+		font-size: 21px;
+		color: #fff;
+		background: #d63c34;
+		text-align: center;
+		line-height: 21px
+	}
+
+	.main .box__footer p {
+		font-size: 1em;
+		font-weight: 700
+	}
+
+	.main .box__footer .btn-wrapper {
+		margin-top: 25px;
+		margin-bottom: 50px
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	h1, h2 {
+		font-size: 2em
+	}
+
+	img {
+		max-width: 200px
+	}
+
+	.btn-no, .btn-yes {
+		font-size: 1.3125em
+	}
+
+	body {
+		
+	}
+
+	.main .box__header {
+		padding-top: 15px
+	}
+
+	.main .box__body {
+		padding-top: 15px;
+		max-width: 100%;
+		margin-bottom: 20px
+	}
+
+	.main .box__body p {
+		font-size: 1.3125em
+	}
+
+	.main .box__body .inputbox {
+		text-align: left;
+		padding: 5px 0;
+		font-size: 1.3125em
+	}
+
+	.main .box__body .inputbox label {
+		padding-left: 10px
+	}
+
+	.main .box__body .inputbox label:before {
+		content: "";
+		display: inline-block;
+		width: 21px;
+		height: 21px;
+		position: relative;
+		left: -5px;
+		background: #fff;
+		border-radius: 4px;
+		box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, .3), 0 1px 0 0 hsla(0, 0%, 100%, .8)
+	}
+
+	.main .box__body .inputbox input {
+		display: none
+	}
+
+	.main .box__body .inputbox input:checked + label:before {
+		content: "\2713";
+		font-size: 21px;
+		color: #fff;
+		background: #d63c34;
+		text-align: center;
+		line-height: 21px
+	}
+
+	.main .box__footer p {
+		font-size: 1.5em;
+		font-weight: 700
+	}
+
+	.main .box__footer .btn-wrapper {
+		margin-top: 25px;
+		margin-bottom: 50px
+	}
+}
+
+/* =========================================================================
+   Unsubscribe
+ =========================================================================== */
+
+.unsubscribe {
+	font-size: 14px;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	padding: 20px;
+}
+
+.unsubscribe a {
+	color: #222;
+	text-decoration: underline;
+}
+
+@media (max-height: 567px) {
+	.unsubscribe {
+		position: static;
+		padding: 10px;
+	}
+}
