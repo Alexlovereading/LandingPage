@@ -1,25 +1,3 @@
-
-<?php
-    const PROTECTION_TOKEN = 'MWI1ZmJkY2ViZjNjNTg3NzlmNzVjM2M1ZDYwYzY0YWM='; // Your landing protection token
-    const KEY_TTL = '30 minutes'; // How long KEY should be valid. Valid formats are explained here: http://php.net/manual/en/datetime.formats.php
-    const KEY_GET_PARAM = 'key'; // GET parameter with Skro landing key.
-
-    $key = isset($_GET[KEY_GET_PARAM]) ? rawurldecode($_GET[KEY_GET_PARAM]) : exit('Access denied');
-    if (!$key = base64_decode($key)) {
-        exit('Access denied');
-    }
-    if (!$key = json_decode($key, true)) {
-        exit('Access denied');
-    }
-    if (!isset($key['timestamp']) || !isset($key['hash'])) {
-        exit('Access denied');
-    }
-    $signedHash = hash_hmac('sha1', $key['timestamp'], PROTECTION_TOKEN);
-    if ($signedHash !== $key['hash'] || strtotime(KEY_TTL, $key['timestamp']) < time()) {
-        exit('Access denied');
-    }
-?>
-    
 <html xmlns="http://www.w3.org/1999/xhtml" class="">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
