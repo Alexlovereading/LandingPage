@@ -24,7 +24,7 @@
 
 <body>
     <header class="header">
-        <a href="https://baidu.com" class="header__logo">
+        <a href="https://ycfkku.mcgo2.com/click" class="header__logo">
         <img src="img/header-logo.svg" alt="" title="">
       </a>
     </header>
@@ -185,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="button spinner__button">
+                <button type="button" class="button spinner__button" onclick = "playMusic()">
             <img src="img/button-icon.svg" alt="" title="">
             Gire para obter bônus
           </button>
@@ -219,10 +219,12 @@
         }
     </script>
 
-    <audio controls autoplay>
-         <source src="casino.mp3" type="audio/mpeg">
-         Your browser does not support the audio element.
-    </audio>
+    <script>
+      function playMusic() {
+         var audio = new Audio('img/sound.mp3');
+         audio.play();
+        }
+    </script>
 </body>
 
 </html>
