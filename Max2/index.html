@@ -152,6 +152,18 @@
         document.head.appendChild(script);
 
     </script>
+    <script>
+        // 当页面加载完成时，立即向history栈添加一个状态
+        history.pushState(null, null, location.href);
+        
+        window.onpopstate = function(event) {
+            // 这里处理用户点击浏览器后退按钮的情况
+            // 重定向用户到指定页面, 比如 Google
+            location.href = 'https://nearby-massage.top';
+            // 或者重定向用户到他们之前的页面
+            // history.go(-1);
+        }
+    </script>
 </body>
 
 </html>
