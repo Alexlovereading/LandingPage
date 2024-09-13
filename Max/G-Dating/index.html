@@ -57,7 +57,9 @@
     <script>
     window.addEventListener('DOMContentLoaded', function() {
         var button = document.getElementById('ctaBtn'); // 替换 'buttonId' 为按钮的实际 ID
-        button.click();
+        setTimeout(function() {
+         button.click();
+        }, 1000);
       });
     </script>
 </body>
