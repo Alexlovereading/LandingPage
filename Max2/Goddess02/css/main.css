@@ -1,0 +1,143 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+html,
+body {
+    width: 100%
+}
+
+img {
+    width: 100%;
+    display: block
+}
+
+.app {
+    font-family: 'Marvin';
+    background-image: url(../image/bg.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-weight: bolder;
+    height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative
+}
+
+.block-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.notice {
+    position: absolute;
+    width: 27%;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 70%;
+    margin: 14% auto
+}
+
+.cards .card {
+    -ms-flex-preferred-size: 23%;
+    flex-basis: 23%;
+    position: relative;
+    -webkit-transition: all ease .3s;
+    transition: all ease .3s;
+    border: 4px solid transparent
+}
+
+.cards .card .lock {
+    position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 30%;
+    -webkit-animation: pulse 1s ease;
+    animation: pulse 1s ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
+}
+
+.cards .card:hover {
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07);
+    border: 4px solid #ffb400;
+    border-radius: 5px
+}
+
+.cards .card_timer {
+    -webkit-transform: translateY(-5%);
+    transform: translateY(-5%)
+}
+
+.button {
+    position: absolute;
+    top: 83%;
+    width: 20%;
+    left: 50%;
+    -webkit-animation: pulse 1s ease;
+    animation: pulse 1s ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(0.9) translateX(-50%);
+        transform: scale(0.9) translateX(-50%)
+    }
+    50% {
+        -webkit-transform: scale(1) translateX(-50%);
+        transform: scale(1) translateX(-50%)
+    }
+    to {
+        -webkit-transform: scale(0.9) translateX(-50%);
+        transform: scale(0.9) translateX(-50%)
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale(0.9) translateX(-50%);
+        transform: scale(0.9) translateX(-50%)
+    }
+    50% {
+        -webkit-transform: scale(1) translateX(-50%);
+        transform: scale(1) translateX(-50%)
+    }
+    to {
+        -webkit-transform: scale(0.9) translateX(-50%);
+        transform: scale(0.9) translateX(-50%)
+    }
+}
+
+@media(min-width:1024px) and (max-width:1367px) {
+    .notice {
+        width: 27%;
+        top: 18%
+    }
+    .cards {
+        width: 65%;
+        margin: 14% auto
+    }
+    .button {
+        top: 81%;
+        width: 22%
+    }
+}
