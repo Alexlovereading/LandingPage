@@ -1,0 +1,316 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-transition: all ease .3s;
+    transition: all ease .3s;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.block-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.app {
+    font-family: 'Marvin';
+    background-image: url(../image/bg.jpg);
+    background-size: cover;
+    background-position: center left;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-weight: bolder;
+    height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+.girls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+}
+
+.girls .girl {
+    opacity: 0;
+    -webkit-transform: translateX(2%);
+    transform: translateX(2%);
+}
+
+.girls .girl1 {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 95%;
+}
+
+.girls .girl2 {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 85%;
+    margin-left: 8%;
+}
+
+.girls .active {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.girls .abs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.cards {
+    position: absolute;
+    width: 55%;
+    top: 28%;
+    right: 7%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.cards .card {
+    position: relative;
+    width: 23%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.cards .card img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.cards .card:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.cards .card:hover img:last-child {
+    opacity: 1;
+}
+
+.cards .active img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.cards .active img:last-child {
+    opacity: 1;
+}
+
+.notice {
+    position: absolute;
+    top: 5%;
+    right: 12%;
+    width: 45%;
+}
+
+.names {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 20%;
+}
+
+.names .name {
+    opacity: 0;
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+}
+
+.names .active {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.names .abs {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.button {
+    position: absolute;
+    bottom: 20%;
+    right: 24%;
+    width: 21%;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.button img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+}
+
+.button:hover {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+.button:hover img:last-child {
+    opacity: 1;
+}
+
+.active {
+    opacity: 1;
+}
+
+.ng {
+    width: 20%;
+    position: absolute;
+    bottom: 7%;
+    left: 5%;
+}
+
+@-webkit-keyframes pulse {
+    from {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+}
+
+@keyframes pulse {
+    from {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+    50% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    to {
+        -webkit-transform: scale(0.95);
+        transform: scale(0.95);
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .app {
+        width: 100%;
+        background-image: url(../image/bg_m.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    .notice {
+        width: 85%;
+        position: absolute;
+        top: 2%;
+        right: 7%;
+    }
+    .girls {
+        width: 100%;
+        position: absolute;
+        top: 55%;
+        left: 0%;
+    }
+    .block-wrapper {
+        height: auto;
+    }
+    .cards {
+        width: 100%;
+        height: -webkit-fill-available;
+        top: 52%;
+        right: 0%;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x;
+        cursor: grab;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+    .cards .card {
+        width: 100%;
+        margin-right: 10px;
+    }
+    .cards .card1 {
+        margin-left: 10px;
+    }
+    .cards .card3 {
+        margin-right: 0;
+    }
+    .cards .card img:last-child {
+        position: relative;
+        width: 185px;
+        padding-top: 10px;
+    }
+    .card::-webkit-scrollbar {
+        display: none;
+    }
+    .names {
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        width: 30%;
+    }
+    .button {
+        width: 50%;
+        bottom: 15%;
+    }
+    .ng {
+        width: 30%;
+        position: absolute;
+        top: 20%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 768px) and (max-height: 668px) and (orientation: portrait) {
+    .girls {
+        top: 60%;
+        left: 0%;
+    }
+    .cards {
+        top: 50%;
+    }
+    .cards .card img:last-child {
+        width: 145px;
+    }
+}
