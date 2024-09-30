@@ -1,0 +1,633 @@
+.prize-picker[data-v-a1462725] {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.prize-picker__option[data-v-a1462725] {
+    display: flex;
+    flex-basis: 0;
+    flex-direction: column;
+    flex-grow: 1;
+    align-content: center;
+    margin: 0 20px;
+    text-align: center
+}
+
+.prize-picker__option[data-v-a1462725]:hover {
+    cursor: pointer
+}
+
+.prize-picker__content[data-v-a1462725] {
+    flex-grow: 1
+}
+
+.prize-picker__button[data-v-a1462725] {
+    height: 48px;
+    margin-top: 15px;
+    padding: 0 24px;
+    color: var(--button-text-color);
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    appearance: none
+}
+
+.prize-picker__button[data-v-a1462725]:hover {
+    background-color: var(--button-hover-color)
+}
+
+.prize-picker__button[disabled][data-v-a1462725] {
+    background-color: var(--button-disabled-color);
+    cursor: auto
+}
+
+.prize-picker__button--selected[data-v-a1462725] {
+    background-color: var(--button-selected-color)
+}
+
+@media (width <=640px) {
+    .prize-picker[data-v-a1462725] {
+        flex-direction: column
+    }
+    .prize-picker__option[data-v-a1462725] {
+        margin-bottom: 20px
+    }
+}
+
+.comment {
+    display: flex;
+    margin: 0 -5px 20px
+}
+
+.comment__image {
+    width: 48px;
+    height: 48px
+}
+
+.comment__avatar {
+    margin: 0 5px;
+    overflow: hidden;
+    font-size: 0;
+    border-radius: 100%;
+    box-shadow: 0 1px 2px #8d8d8d
+}
+
+.comment__content {
+    margin: 0 5px
+}
+
+.comment__name {
+    margin-right: 5px;
+    color: var(--name-color);
+    font-size: 12px
+}
+
+.comment__date {
+    color: var(--date-color);
+    font-size: 11px
+}
+
+[v-cloak] {
+    display: none !important
+}
+
+.download-instructions {
+    max-width: 450px;
+    margin: 0 auto
+}
+
+.download-instructions h1 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px
+}
+
+.download-instructions h2 {
+    color: #4285f4;
+    font-size: 16px
+}
+
+.download-instructions__cta {
+    margin-bottom: 10px;
+    padding: 6px;
+    color: #fff;
+    background: #4285f4
+}
+
+.download-instructions__list {
+    padding: 0;
+    list-style: none
+}
+
+.download-instructions__buttons {
+    margin-top: 10px
+}
+
+.download-instructions__countdown {
+    margin-top: 10px;
+    color: red
+}
+
+.download-instructions__footer {
+    margin-top: 0;
+    color: #999
+}
+
+.google-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.google-play__button {
+    margin: 1rem 0 0;
+    display: inline-block;
+    max-width: 150px
+}
+
+.google-play__subline {
+    text-align: center;
+    font-size: 11px;
+    opacity: .6;
+    margin: 0 0 .5rem
+}
+
+html {
+    height: 100%
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    color: #000;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    background: #fbfbfb;
+    background-attachment: fixed
+}
+
+.title {
+    margin: 0 0 10px;
+    color: #4384f5
+}
+
+.title--h1 {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 29px
+}
+
+.title--h2 {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 20px
+}
+
+.paragraph {
+    margin: 0 0 3px;
+    color: #757575;
+    font-size: 16px;
+    line-height: 24px
+}
+
+.header {
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.header__menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 18px
+}
+
+.header__account {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 28px
+}
+
+.header__logo {
+    height: 50px;
+    margin-top: 8px
+}
+
+.content {
+    box-sizing: border-box;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 5px 20px
+}
+
+.prize-picker {
+    display: inline-flex;
+    margin: 20px auto
+}
+
+.prize-picker__image {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto
+}
+
+.prize-picker__image--placeholder {
+    transform-origin: bottom;
+    animation: chest 1s infinite;
+    animation-delay: 0ms
+}
+
+.prize-picker__option {
+    display: block;
+    flex-basis: 100% !important;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px #0003
+}
+
+.prize-picker__option:first-of-type {
+    margin-left: 0 !important
+}
+
+.prize-picker__option:last-of-type {
+    margin-right: 0 !important
+}
+
+.prize-picker__button {
+    font-weight: 700;
+    border-bottom: 3px solid rgba(0, 0, 0, .3) !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px 3px #00000036;
+    animation: quick-wobble 2s infinite;
+    animation-delay: .2s
+}
+
+.prize {
+    text-align: center
+}
+
+.prize__image {
+    max-height: 200px
+}
+
+.prize__name {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.prize__button {
+    display: inline-block;
+    height: 48px;
+    margin-top: 15px;
+    padding: 0 24px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 48px;
+    letter-spacing: .5px;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #1a73e8;
+    border-bottom: 3px solid rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    box-shadow: 0 2px 3px #00000036;
+    cursor: pointer
+}
+.prize__button {
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #0cb1c3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    /* Add your existing button styles here */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.testimonials {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #1a73e8;
+    font-size: 13px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px #0003
+}
+
+.testimonials__title {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: italic
+}
+
+.mb-small {
+    margin-bottom: 1rem
+}
+
+.countdown {
+    color: #4285f4;
+    font-weight: 700
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000080
+}
+
+.loader__dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px
+}
+
+.loader__dual-ring:after {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    border: 6px solid;
+    border-color: #ff2110 #ffbb08 #1a73e8 #31c552;
+    border-radius: 50%;
+    animation: loader-dual-ring 1.2s linear infinite;
+    content: ""
+}
+
+@keyframes loader-dual-ring {
+    0% {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes quick-wobble {
+    0%,
+    89% {
+        transform: scale(1)
+    }
+    90% {
+        transform: scale(1.04)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes chest {
+    0% {
+        transform: scaleY(1) scaleX(1)
+    }
+    50% {
+        transform: scaleY(1.05) scaleX(.97)
+    }
+    to {
+        transform: scaleY(1) scaleX(1)
+    }
+}
+
+@media (width <=640px) {
+    .content {
+        padding: 0 10px
+    }
+    .title--h1 {
+        font-size: 24px
+    }
+    .prize-picker {
+        flex-direction: row !important;
+        margin: 10px 0 0
+    }
+    .paragraph {
+        font-size: 13px;
+        line-height: 18px
+    }
+    .prize-picker__option {
+        margin: 10px 5px !important;
+        padding: 6px !important
+    }
+    .prize-picker__button {
+        height: 33px;
+        padding: 0 4px !important;
+        overflow: hidden;
+        font-size: 11px !important;
+        line-height: 33px;
+        text-overflow: ellipsis
+    }
+    .testimonials {
+        margin-top: 10px
+    }
+    .prize__button {
+        margin-bottom: 20px
+    }
+}
+
+.theme--amazon .header {
+    padding: 15px;
+    color: #fff;
+    background-color: #131921
+}
+
+.theme--amazon .header__logo {
+    height: 25px
+}
+
+.theme--amazon .prize-picker__button,
+.theme--amazon .prize__button {
+    color: #000 !important;
+    text-shadow: 0 1px 0 #ffe093 !important;
+    background: linear-gradient(180deg, #fbd773 0%, #fbd978 40%, #fbcf56 41%, #fac228 100%) !important;
+    border: 1px solid #e6a402 !important;
+    border-radius: 3px !important
+}
+
+.theme--apple {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif
+}
+
+.theme--apple .header {
+    padding: 5px;
+    background-color: #3a3a3a
+}
+
+.theme--apple .header__logo {
+    height: 25px;
+    margin: 0 auto
+}
+
+.theme--apple .prize-picker__button,
+.theme--apple .prize__button {
+    height: auto !important;
+    padding: 10px !important;
+    line-height: inherit !important;
+    border: none !important;
+    border-radius: 25px !important
+}
+
+.theme--mcdonalds {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif
+}
+
+.theme--mcdonalds .header {
+    border-bottom: 0;
+    box-shadow: 0 0 9px #0000001a
+}
+
+.theme--mcdonalds .prize-picker__button,
+.theme--mcdonalds .prize__button {
+    color: #000 !important;
+    background-color: #ffbc0d !important;
+    border: none !important
+}
+
+.h1 {
+    color: #5b5b5b;
+    font-size: 24px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border: 0;
+    padding: 0 20px;
+    font-size: 28px;
+    width: 75%;
+    background: #4d94ff;
+    color: white;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 25px;
+    background-color: #1a73e8;
+    font-weight: 700;
+    border-bottom: 3px solid rgba(0, 0, 0, .3) !important;
+    border-radius: 5px !important;
+    box-shadow: 0 2px 3px #00000036;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn:disabled,
+.btn.disabled {
+    background: #a5a5a5;
+}
+
+/* Forms */
+
+.input {
+    outline: none;
+    padding: 15px 10px;
+    border: 0;
+    border-bottom: 2px solid #464646;
+    border: 1px solid #ddd;
+    background: transparent;
+    margin: 0 5px;
+    text-align: center;
+}
+
+/* Error */
+
+.error {
+    color: red;
+    margin-top: 15px;
+}
+
+/* Utilities */
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.block {
+    display: block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#time {
+    color: red;
+}
+
+.operators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.operators__button {
+    width: 40%;
+    max-width: 144px;
+    margin: 2.5%;
+    cursor: pointer;
+}
+
+.operators__button img {
+    overflow: hidden;
+    font-size: 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 0 0 rgba(0, 0, 0, .2);
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: -webkit-transform .2s ease;
+    -o-transition: -o-transform .2s ease;
+    -moz-transition: transform .2s ease, -moz-transform .2s ease;
+    transition: transform .2s ease;
+    transition: transform .2s ease, -webkit-transform .2s ease, -moz-transform .2s ease, -o-transform .2s ease;
+    width: 100%;
+    height: auto;
+}
+
+.operators__label {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
