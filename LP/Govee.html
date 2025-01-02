@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govee - Smart Lighting Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #000;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1563132337-f159f484226c?q=80&w=2000') center/cover no-repeat;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .content-inner {
+            max-width: 800px;
+            margin-bottom: 100px;
+            /* 增加底部间距，避免与特性标签重叠 */
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #5E17EB 0%, #8E2DE2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 1.25rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(94, 23, 235, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(94, 23, 235, 0.4);
+        }
+
+        .features {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            z-index: 2;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .content-inner {
+                margin-bottom: 160px;
+                /* 移动端增加更多底部间距 */
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+                bottom: 30px;
+                gap: 1rem;
+            }
+
+            .feature {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="content-inner">
+                <h1>Transform Your Space with Smart Lighting</h1>
+                <p class="subtitle">Discover the perfect ambiance with millions of colors and smart controls</p>
+                <a href="https://rthsu.com/g/yzzx0gmxy0e2cee34be93791d3d079/" class="cta-button">Shop Now</a>
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature">16 Million+ Colors</div>
+            <div class="feature">Music Sync</div>
+            <div class="feature">Smart Control</div>
+        </div>
+    </div>
+</body>
+
+</html>
