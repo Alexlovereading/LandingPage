@@ -143,24 +143,55 @@
             color: var(--accent-color);
         }
     </style>
-    <!--Optional, send client hints to get accurate device data-->
-    <meta http-equiv="delegate-ch"
-        content="sec-ch-ua https://t.find-u.xyz; sec-ch-ua-mobile https://t.find-u.xyz; sec-ch-ua-arch https://t.find-u.xyz; sec-ch-ua-model https://t.find-u.xyz; sec-ch-ua-platform https://t.find-u.xyz; sec-ch-ua-platform-version https://t.find-u.xyz; sec-ch-ua-bitness https://t.find-u.xyz; sec-ch-ua-full-version-list https://t.find-u.xyz; sec-ch-ua-full-version https://t.find-u.xyz" />
 
-    <!-- MaxConv Tracking Script Base Code-->
-    <script>!function (w, d, o, n, c) { w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; var s = d.createElement(n), t = d.getElementsByTagName(n)[0]; s.async = !0; s.defer = !0; s.src = "https://t.find-u.xyz/t/t.js"; t.parentNode.insertBefore(s, t); }(window, document, "maxconv", "script");</script>
-    <noscript>
-        <link rel="stylesheet" href="https://t.find-u.xyz/t/t.css?mc_ns=1" />
-    </noscript>
-    <!-- End MaxConv Tracking Script Base Code-->
     <script>
+        // 保存 mclid 到 Cookie
+        function saveMclidToCookie() {
+            // 获取 URL 参数 mclid
+            const urlParams = new URLSearchParams(window.location.search);
+            const mclid = urlParams.get('mclid');
+
+            if (mclid) {
+                // 保存 mclid 到 Cookie，设置过期时间为 30 天
+                document.cookie = "mclid=" + mclid + "; path=/; max-age=" + 60 * 60 * 24 * 30;
+                console.log("mclid saved to cookie: " + mclid);
+            }
+        }
+
+        // 获取 mclid 的值
+        function getMclidFromCookie() {
+            const name = "mclid=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(name) === 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        // 处理转化事件，触发回发请求
         function handleSubmit(event) {
             // 阻止表单的默认提交行为（如果需要等待图片请求完成后再提交）
             event.preventDefault();
 
-            // 创建图片元素来触发跟踪请求
-            var img = new Image();
-            img.src = 'https://t.find-u.xyz/conv.gif?event=Signup';
+            // 获取存储在 cookie 中的 mclid
+            const mclid = getMclidFromCookie();
+
+            if (mclid) {
+                // 构造回发请求的 URL，附加 mclid 参数
+                const conversionUrl = "https://t.find-u.xyz/conv?clid=" + mclid;
+
+                // 发送请求
+                var image = new Image(1, 1);
+                image.src = conversionUrl;
+
+                console.log("Conversion tracked with mclid: " + mclid);
+            } else {
+                console.log("mclid not found in cookies.");
+            }
 
             // 发送图片请求后，继续提交表单（如果需要）
             img.onload = function () {
@@ -168,6 +199,11 @@
                 event.target.submit();  // 提交表单
             };
         }
+
+        // 页面加载时保存 mclid
+        window.onload = function () {
+            saveMclidToCookie();
+        };
     </script>
 </head>
 
