@@ -172,11 +172,9 @@
             return "";
         }
 
+
         // 处理转化事件，触发回发请求
         function handleSubmit(event) {
-            // 阻止表单的默认提交行为（如果需要等待图片请求完成后再提交）
-            event.preventDefault();
-
             // 获取存储在 cookie 中的 mclid
             const mclid = getMclidFromCookie();
 
@@ -185,24 +183,39 @@
                 const conversionUrl = "https://2bibr0.mcgo2.com/conv?clid=" + mclid;
 
                 // 发送请求
-                var image = new Image(1, 1);
-                image.src = conversionUrl;
+                const trackingImage = new Image(1, 1);
+                trackingImage.onload = function () {
+                    // 图片加载成功后提交表单
+                    event.target.submit();
+                };
+
+                trackingImage.onerror = function () {
+                    // 如果图片加载失败，也提交表单
+                    event.target.submit();
+                };
+
+                trackingImage.src = conversionUrl;
 
                 console.log("Conversion tracked with mclid: " + mclid);
             } else {
+                // 如果没有 mclid，直接提交表单
+                event.target.submit();
                 console.log("mclid not found in cookies.");
             }
 
-            // 发送图片请求后，继续提交表单（如果需要）
-            img.onload = function () {
-                // 当图片请求成功发送后，提交表单
-                event.target.submit();  // 提交表单
-            };
+            // 防止默认提交
+            event.preventDefault();
         }
 
         // 页面加载时保存 mclid
         window.onload = function () {
             saveMclidToCookie();
+
+            // 绑定表单提交事件
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', handleSubmit);
+            }
         };
     </script>
 </head>
