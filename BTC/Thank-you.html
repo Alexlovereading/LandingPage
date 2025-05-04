@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>感谢您的订阅 - 比特币交易手册</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #0a0e17;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9InBhdHRlcm4iIHg9IjAiIHk9IjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDMwKSI+CiAgICAgIDxyZWN0IHg9IjE5LjUiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjQwIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMDMpIj48L3JlY3Q+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiPjwvcmVjdD4KPC9zdmc+'), url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxkZWZzPgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBjeD0iMjAlIiBjeT0iMjAlIiByPSI1MCUiIGZ4PSIyMCUiIGZ5PSIyMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjc5MzFhIiBzdG9wLW9wYWNpdHk9IjAuMSI+PC9zdG9wPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwYTBlMTciIHN0b3Atb3BhY2l0eT0iMCI+PC9zdG9wPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSI+PC9yZWN0Pgo8L3N2Zz4=');
+      background-size: 100% 100%, 100% 100%;
+      opacity: 1;
+      z-index: -1;
+    }
+
+    .tech-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .tech-bg::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background-image:
+        radial-gradient(circle at 30% 50%, rgba(247, 147, 26, 0.08) 0%, rgba(10, 14, 23, 0) 50%),
+        radial-gradient(circle at 80% 20%, rgba(247, 147, 26, 0.05) 0%, rgba(10, 14, 23, 0) 40%);
+      animation: rotate 60s linear infinite;
+    }
+
+    .tech-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImhleGFnb25QYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cGF0aCBkPSJNMTUsMCBMMzAsMCBMNDUsMTUgTDQ1LDQ1IEwzMCw2MCBMMTUsNjAgTDAsNDUgTDAsMTUgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI0NywgMTQ3LCAyNiwgMC4wOCkiIHN0cm9rZS13aWR0aD0iMC41Ij48L3BhdGg+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGV4YWdvblBhdHRlcm4pIj48L3JlY3Q+Cjwvc3ZnPg==');
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .digital-circuit {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.15;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImNpcmN1aXQiIHg9IjAiIHk9IjAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTTEwLDEwIEwxMCw1MCBMNTAsNTAgTDUwLDkwIEw5MCw5MCBMOTAsMTMwIEwxMzAsMTMwIEwxMzAsMTcwIEwxNzAsMTcwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNzkzMWEiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2Utb3BhY2l0eT0iMC4yIj48L3BhdGg+CiAgICAgIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjMiIGZpbGw9IiNmNzkzMWEiIGZpbGwtb3BhY2l0eT0iMC4zIj48L2NpcmNsZT4KICAgICAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMyIgZmlsbD0iI2Y3OTMxYSIgZmlsbC1vcGFjaXR5PSIwLjMiPjwvY2lyY2xlPgogICAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjkwIiByPSIzIiBmaWxsPSIjZjc5MzFhIiBmaWxsLW9wYWNpdHk9IjAuMyI+PC9jaXJjbGU+CiAgICAgIDxjaXJjbGUgY3g9IjEzMCIgY3k9IjEzMCIgcj0iMyIgZmlsbD0iI2Y3OTMxYSIgZmlsbC1vcGFjaXR5PSIwLjMiPjwvY2lyY2xlPgogICAgICA8Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNzAiIHI9IjMiIGZpbGw9IiNmNzkzMWEiIGZpbGwtb3BhY2l0eT0iMC4zIj48L2NpcmNsZT4KCiAgICAgIDxwYXRoIGQ9Ik0xOTAsMTAgTDE5MCw3MCBMMTMwLDcwIEwxMzAsMTEwIEw3MCwxMTAgTDcwLDE1MCBMMTAsMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNzkzMWEiIHN0cm9rZS13aWR0aD0iMC44IiBzdHJva2Utb3BhY2l0eT0iMC4yIj48L3BhdGg+CiAgICAgIDxjaXJjbGUgY3g9IjE5MCIgY3k9IjEwIiByPSIzIiBmaWxsPSIjZjc5MzFhIiBmaWxsLW9wYWNpdHk9IjAuMyI+PC9jaXJjbGU+CiAgICAgIDxjaXJjbGUgY3g9IjEzMCIgY3k9IjcwIiByPSIzIiBmaWxsPSIjZjc5MzFhIiBmaWxsLW9wYWNpdHk9IjAuMyI+PC9jaXJjbGU+CiAgICAgIDxjaXJjbGUgY3g9IjcwIiBjeT0iMTEwIiByPSIzIiBmaWxsPSIjZjc5MzFhIiBmaWxsLW9wYWNpdHk9IjAuMyI+PC9jaXJjbGU+CiAgICAgIDxjaXJjbGUgY3g9IjEwIiBjeT0iMTUwIiByPSIzIiBmaWxsPSIjZjc5MzFhIiBmaWxsLW9wYWNpdHk9IjAuMyI+PC9jaXJjbGU+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjY2lyY3VpdCkiPjwvcmVjdD4KPC9zdmc+');
+    }
+
+    .container {
+      max-width: 600px;
+      width: 90%;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .thank-you-card {
+      background: rgba(15, 20, 30, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(247, 147, 26, 0.2);
+      padding: 40px;
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 80px rgba(247, 147, 26, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .bitcoin-logo {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 10px rgba(247, 147, 26, 0.5));
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .bitcoin-logo svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #f7931a, #ffb74d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 20px rgba(247, 147, 26, 0.2);
+    }
+
+    .message {
+      text-align: center;
+      font-size: 16px;
+      color: #b0b7c3;
+      margin-bottom: 35px;
+      line-height: 1.8;
+    }
+
+    .highlight {
+      color: #f7931a;
+      font-weight: 500;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #f7931a, #ffb74d);
+      color: #13151a;
+      padding: 16px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      transition: all 0.3s ease;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow:
+        0 4px 20px rgba(247, 147, 26, 0.3),
+        0 0 0 1px rgba(247, 147, 26, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg,
+          rgba(255, 255, 255, 0) 10%,
+          rgba(255, 255, 255, 0.1) 20%,
+          rgba(255, 255, 255, 0) 30%);
+      transform: rotate(30deg);
+      animation: shine 6s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-100%) rotate(30deg);
+      }
+
+      20% {
+        transform: translateX(100%) rotate(30deg);
+      }
+
+      100% {
+        transform: translateX(100%) rotate(30deg);
+      }
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 7px 25px rgba(247, 147, 26, 0.4),
+        0 0 0 1px rgba(247, 147, 26, 0.6);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(247, 147, 26, 0.01), rgba(247, 147, 26, 0.2), rgba(247, 147, 26, 0.01));
+      margin: 35px 0;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #5a6072;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 480px) {
+      .thank-you-card {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tech-bg"></div>
+  <div class="digital-circuit"></div>
+
+  <div class="container">
+    <div class="thank-you-card">
+      <div class="header">
+        <div class="bitcoin-logo">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M63.0395 39.741C59.1207 56.8385 41.9355 67.3635 24.8381 63.4447C7.74064 59.5259 -2.78439 42.3407 1.13444 25.2433C5.05327 8.14585 22.2385 -2.37919 39.3359 1.53964C56.4334 5.45847 66.9584 22.6436 63.0395 39.741Z"
+              fill="#F7931A" />
+            <path
+              d="M46.1012 27.4419C46.7058 23.1513 43.4327 20.9512 39.0468 19.4861L40.4768 13.7077L37.1199 12.8952L35.7349 18.5148C34.8524 18.2948 33.9474 18.0873 33.0499 17.8798L34.4424 12.2227L31.0855 11.4102L29.6555 17.1886C28.9259 17.0186 28.2113 16.8486 27.5192 16.6711L27.5267 16.6336L22.8698 15.5086L22.0048 19.0985C22.0048 19.0985 24.5097 19.6735 24.4647 19.7111C25.8347 20.0461 26.0947 20.9661 26.0497 21.6936L24.4047 28.2969C24.5022 28.3194 24.6297 28.3569 24.7722 28.4244C24.6522 28.3944 24.5247 28.3644 24.3972 28.3344L22.0948 37.4204C21.9223 37.8329 21.4723 38.4604 20.5148 38.2229C20.5448 38.2754 18.0548 37.6104 18.0548 37.6104L16.4248 41.4592L20.8023 42.5242C21.6173 42.7317 22.4173 42.9467 23.1998 43.1467L21.7548 48.9851L25.1117 49.7976L26.5417 44.0192C27.4542 44.2642 28.3442 44.4942 29.2117 44.7092L27.7892 50.4576L31.1461 51.2701L32.5911 45.4467C38.4761 46.5042 42.8761 46.0692 44.9511 40.7561C46.6336 36.5155 45.1211 34.0555 41.9755 32.4705C44.2655 31.9605 46.0055 30.3905 46.1012 27.4419ZM38.1818 38.4604C36.9818 42.7011 29.8088 40.4485 27.5042 39.8735L29.4542 32.0655C31.7588 32.6405 39.4293 34.0255 38.1818 38.4604ZM39.3818 27.3769C38.2818 31.2257 32.3911 29.2832 30.4936 28.8032L32.2611 21.7386C34.1586 22.2186 40.5293 23.3611 39.3818 27.3769Z"
+              fill="white" />
+          </svg>
+        </div>
+        <h1>感谢您订阅BTC交易手册</h1>
+      </div>
+
+      <div class="message">
+        <p><span class="highlight">恭喜您！</span>我们已经将<span class="highlight">BTC交易手册</span>发送到您的邮箱，请注意查收!</p>
+        <p>后续我们会通过邮箱给您发送更多进阶的交易知识，<br>请时刻关注我们的更新。</p>
+        <p>您可以点击下方按钮查看BTC的价格行情。</p>
+      </div>
+
+      <a href="https://cn.tradingview.com/?aff_id=127951" target="_blank" class="btn"
+        onclick="setTimeout(function() { window.location = 'https://hooliredir.com/?pid=1366&offer_id=49'; }, 100);">
+        立即查看BTC价格动态
+      </a>
+
+      <div class="divider"></div>
+
+      <div class="footer">
+        <p>© 2025 比特币交易手册 | 专业的加密货币交易指南</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 当页面加载完成时，立即向history栈添加一个状态
+    history.pushState(null, null, location.href);
+
+    window.onpopstate = function (event) {
+      // 这里处理用户点击浏览器后退按钮的情况
+      // 重定向用户到指定页面, 比如 Google
+      location.href = 'https://hooliredir.com/?pid=1366&offer_id=49';
+      // 或者重定向用户到他们之前的页面
+      // history.go(-1);
+    }
+  </script>
+</body>
+
+</html>

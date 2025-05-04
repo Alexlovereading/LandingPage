@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何开始购买比特币赚取高收益</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A5568;
+            --accent-color: #E53E3E;
+            --background-color: #F7FAFC;
+            --text-color: #2D3748;
+            --muted-color: #718096;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, rgba(74, 85, 104, 0.05), rgba(229, 62, 62, 0.05)),
+                url('https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .offer-summary {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .discount-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 16px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .price-highlight {
+            color: var(--primary-color);
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .countdown {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            font-weight: 600;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--muted-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-color);
+        }
+
+        .required {
+            color: var(--accent-color);
+        }
+    </style>
+
+    <script>
+        // 保存 mclid 到 Cookie
+        function saveMclidToCookie() {
+            // 获取 URL 参数 mclid
+            const urlParams = new URLSearchParams(window.location.search);
+            const mclid = urlParams.get('mclid');
+
+            if (mclid) {
+                // 保存 mclid 到 Cookie，设置过期时间为 30 天
+                document.cookie = "mclid=" + mclid + "; path=/; max-age=" + 60 * 60 * 24 * 30;
+                console.log("mclid saved to cookie: " + mclid);
+            }
+        }
+
+        // 获取 mclid 的值
+        function getMclidFromCookie() {
+            const name = "mclid=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(name) === 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        // 页面加载时执行
+        window.onload = function () {
+            saveMclidToCookie();
+
+            // 获取表单元素
+            const form = document.querySelector('.list-subscribe-form');
+            if (form) {
+                // 添加ID以便后续引用
+                form.id = 'mailwizForm';
+
+                // 绑定表单提交事件
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // 阻止表单默认提交
+
+                    // 创建表单数据对象
+                    const formData = new FormData(this);
+
+                    // 获取 mclid
+                    const mclid = getMclidFromCookie();
+
+                    // 定义提交表单的函数
+                    const submitFormData = () => {
+                        // 使用 fetch API 提交表单数据
+                        fetch(this.action, {
+                            method: 'POST',
+                            body: formData
+                        })
+                            .then(response => {
+                                // 表单提交成功后跳转到自定义感谢页面
+                                window.location.href = 'https://you-win.top/BTC/Thank-you.html'; // 替换为您的感谢页面URL
+                            })
+                            .catch(error => {
+                                console.error('提交出错:', error);
+                                // 即使出错也跳转
+                                window.location.href = 'https://you-win.top/BTC/Thank-you.html'; // 替换为您的感谢页面URL
+                            });
+                    };
+
+                    // 如果有 mclid，先发送转化跟踪请求
+                    if (mclid) {
+                        // 构造回发请求的 URL，附加 mclid 参数
+                        const conversionUrl = "https://2bibr0.mcgo2.com/conv?clid=" + mclid;
+
+                        // 发送请求
+                        const trackingImage = new Image(1, 1);
+                        trackingImage.onload = submitFormData;
+                        trackingImage.onerror = submitFormData;
+                        trackingImage.src = conversionUrl;
+
+                        console.log("Conversion tracked with mclid: " + mclid);
+                    } else {
+                        // 如果没有 mclid，直接提交表单
+                        submitFormData();
+                        console.log("mclid not found in cookies.");
+                    }
+                });
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="offer-summary">
+            <div class="discount-badge">交易手册限时免费领取</div>
+            <div class="price-highlight">从零开始交易比特币<br>赚取更高收益</div>
+            <div class="discount-badge">邮箱填写</div>
+            <div id="countdown" class="countdown"> 还剩最后: 05:00</div>
+        </div>
+
+        <form class="list-subscribe-form" id="mailwizForm"
+            action="https://emailstellar.com/index.php/lists/bj414qwed003a/subscribe" method="post"
+            onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="NAME">姓名 <span class="required">*</span></label>
+                <input class="form-control" placeholder="填写全名" type="text" name="NAME" id="NAME" required />
+            </div>
+            <div class="form-group">
+                <label for="GENDER">性别 <span class="required">*</span></label>
+                <select class="form-control" name="GENDER" id="GENDER" required>
+                    <option value="">选择您的性别</option>
+                    <option value="Male">男</option>
+                    <option value="Female">女</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="AGE">出生日期 <span class="required">*</span></label>
+                <select class="form-control" name="AGE" id="AGE" required>
+                    <option value="1960">
+                        1960
+                    </option>
+                    <option value="1961">
+                        1961
+                    </option>
+                    <option value="1962">
+                        1962
+                    </option>
+                    <option value="1963">
+                        1963
+                    </option>
+                    <option value="1964">
+                        1964
+                    </option>
+                    <option value="1965">
+                        1965
+                    </option>
+                    <option value="1966">
+                        1966
+                    </option>
+                    <option value="1967">
+                        1967
+                    </option>
+                    <option value="1968">
+                        1968
+                    </option>
+                    <option value="1969">
+                        1969
+                    </option>
+                    <option value="1970">
+                        1970
+                    </option>
+                    <option value="1971">
+                        1971
+                    </option>
+                    <option value="1972">
+                        1972
+                    </option>
+                    <option value="1973">
+                        1973
+                    </option>
+                    <option value="1974">
+                        1974
+                    </option>
+                    <option value="1975">
+                        1975
+                    </option>
+                    <option value="1976">
+                        1976
+                    </option>
+                    <option value="1977">
+                        1977
+                    </option>
+                    <option value="1978">
+                        1978
+                    </option>
+                    <option value="1979">
+                        1979
+                    </option>
+                    <option value="1980">
+                        1980
+                    </option>
+                    <option value="1981">
+                        1981
+                    </option>
+                    <option value="1982">
+                        1982
+                    </option>
+                    <option value="1983">
+                        1983
+                    </option>
+                    <option value="1984">
+                        1984
+                    </option>
+                    <option value="1985">
+                        1985
+                    </option>
+                    <option value="1986">
+                        1986
+                    </option>
+                    <option value="1987">
+                        1987
+                    </option>
+                    <option value="1988" selected>
+                        1988
+                    </option>
+                    <option value="1989">
+                        1989
+                    </option>
+                    <option value="1990">
+                        1990
+                    </option>
+                    <option value="1991">
+                        1991
+                    </option>
+                    <option value="1992">
+                        1992
+                    </option>
+                    <option value="1993">
+                        1993
+                    </option>
+                    <option value="1994">
+                        1994
+                    </option>
+                    <option value="1995">
+                        1995
+                    </option>
+                    <option value="1996">
+                        1996
+                    </option>
+                    <option value="1997">
+                        1997
+                    </option>
+                    <option value="1998">
+                        1998
+                    </option>
+                    <option value="1999">
+                        1999
+                    </option>
+                    <option value="2000">
+                        2000
+                    </option>
+                    <option value="2001">
+                        2001
+                    </option>
+                    <option value="2002">
+                        2002
+                    </option>
+                    <option value="2003">
+                        2003
+                    </option>
+                    <option value="2004">
+                        2004
+                    </option>
+                    <option value="2005">
+                        2005
+                    </option>
+                    <option value="2006">
+                        2006
+                    </option>
+                    <option value="2007">
+                        2007
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="EMAIL">邮箱地址 <span class="required">*</span></label>
+                <input class="form-control" placeholder="你的邮箱地址" type="email" name="EMAIL" id="EMAIL" required />
+            </div>
+            <button type="submit" class="btn-primary">立即免费领取比特币交易手册</button>
+        </form>
+    </div>
+
+    <script>
+        function startCountdown() {
+            let time = 5 * 60; // 5 minutes
+            const countdownEl = document.getElementById('countdown');
+
+            function updateCountdown() {
+                const minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                countdownEl.innerHTML = `仅剩: ${minutes}:${seconds}`;
+
+                if (time > 0) {
+                    time--;
+                    setTimeout(updateCountdown, 1000);
+                } else {
+                    countdownEl.innerHTML = 'Offer Expired!';
+                }
+            }
+
+            updateCountdown();
+        }
+
+        startCountdown();
+    </script>
+
+    <script>
+        history.pushState(null, null, location.href);
+
+        window.onpopstate = function (event) {
+            location.href = 'https://little-know.com/investment/account/okx/';
+        }
+    </script>
+
+</body>
+
+</html>
