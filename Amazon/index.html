@@ -9,6 +9,8 @@
   <link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
   <link href="landers/pick-a-prize/assets/app.css" type="text/css" rel="stylesheet" />
   <script src="../_worker.js"></script>
+  <script type="text/javascript">function skroCb(cb) { var r = cb.trackingDomain + "/click", l = new RegExp(r + "/?(\\d*)"), c = document.querySelectorAll('a[href*="' + r + '"]'); for (var n = 0; n < c.length; n++) { var a = l.exec(c[n].href); a && (c[n].href = "https://" + a[0] + "?trck=" + cb.token) } } (function () { var t = new URLSearchParams(window.location.search); if (t.get("trck") === "" || t.get("trck") === null) return !1; t.set("ref", document.referrer); var e = document.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "https://2.find-u.xyz/landing?callback=skroCb&" + decodeURIComponent(t.toString()); var r = document.getElementsByTagName("script")[0]; r.parentNode.insertBefore(e, r) })();
+  </script>
 </head>
 
 <body class="theme--default">
