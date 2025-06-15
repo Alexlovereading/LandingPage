@@ -235,3 +235,14 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            history.pushState(null, null, location.href);
+
+            window.onpopstate = function (event) {
+                location.href = 'https://google.com';
+            }
+        </script>
+</body>
+
+</html>
