@@ -1,109 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instant Vehicle Insurance Quotes | Auto Quote Guide</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-      body { font-family: 'Inter', sans-serif; }
-      .feature-card {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      .feature-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      }
-  </style>
+    <meta charset="UTF-8">
+    <title>Save Big on Auto Insurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-button {
+            animation: pulse-animation 2s infinite;
+        }
+
+        .bg-gradient {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-stack {
+                flex-direction: column;
+            }
+
+            .hidden-mobile {
+                display: none;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .text-responsive {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-white">
-  <div class="container mx-auto px-4 py-12">
-      <!-- Hero Section -->
-      <div class="text-center max-w-4xl mx-auto mb-16">
-          <div class="bg-blue-100 inline-block px-4 py-2 rounded-full text-blue-800 text-sm mb-4">
-              🚗 Instant Vehicle Insurance Quotes
-          </div>
-          <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Save Up to 40% on Your Vehicle Insurance
-          </h1>
-          <p class="text-xl text-gray-600 mb-10">
-              Compare rates from top insurers in seconds. No personal information required.
-          </p>
-          
-          <!-- Primary CTA -->
-          <a href="https://www.autoquoteguide.com/quote/vehicle-make?clickid=37be34c3c1434ef58671225a9d020bf4" 
-             class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg text-lg font-bold 
-                    hover:bg-blue-700 transition duration-300 transform hover:scale-105 
-                    shadow-lg hover:shadow-xl">
-              Get My Free Quote Now! 🚀
-          </a>
-      </div>
 
-      <!-- Key Features Section -->
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="bg-white feature-card p-6 rounded-xl shadow-md border border-gray-100">
-              <div class="text-4xl mb-4">💰</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-800">Lowest Rates Guaranteed</h3>
-              <p class="text-gray-600">
-                  We compare quotes from 30+ top insurers to find you the best possible rate.
-              </p>
-          </div>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-4xl w-full bg-white shadow-2xl rounded-2xl overflow-hidden animate__animated animate__fadeIn">
+            <div class="bg-gradient text-white p-8 text-center">
+                <h1 class="text-3xl font-bold mb-4 animate__animated animate__bounceIn text-responsive">
+                    Are You Overpaying for Auto Insurance?
+                </h1>
+                <p class="text-xl mb-6 animate__animated animate__slideInUp text-responsive">
+                    Drivers Are Saving Up to 70% with Our Revolutionary Insurance Solution!
+                </p>
+            </div>
 
-          <div class="bg-white feature-card p-6 rounded-xl shadow-md border border-gray-100">
-              <div class="text-4xl mb-4">⏱️</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-800">Instant Results</h3>
-              <p class="text-gray-600">
-                  Get comprehensive quotes in less than 2 minutes, without any hassle.
-              </p>
-          </div>
+            <div class="p-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center mobile-stack">
+                    <div>
+                        <div
+                            class="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-6 animate__animated animate__slideInLeft">
+                            <p class="font-bold text-yellow-700 text-responsive">
+                                🚗 Average Annual Insurance Cost: $1,674
+                            </p>
+                            <p class="text-yellow-600 text-responsive">
+                                Our Solution: Just $37/Month!
+                            </p>
+                        </div>
 
-          <div class="bg-white feature-card p-6 rounded-xl shadow-md border border-gray-100">
-              <div class="text-4xl mb-4">🛡️</div>
-              <h3 class="text-xl font-bold mb-3 text-gray-800">100% Secure</h3>
-              <p class="text-gray-600">
-                  Your data is protected with bank-level encryption. No spam, guaranteed.
-              </p>
-          </div>
-      </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center animate__animated animate__fadeInRight text-responsive">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Lowest Prices Guaranteed
+                            </li>
+                            <li class="flex items-center animate__animated animate__fadeInRight text-responsive">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                No Hidden Fees
+                            </li>
+                            <li class="flex items-center animate__animated animate__fadeInRight text-responsive">
+                                <svg class="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                5-Minute Quote Process
+                            </li>
+                        </ul>
 
-      <!-- Trust Signals -->
-      <div class="max-w-4xl mx-auto mt-16 bg-blue-50 rounded-xl p-8 text-center">
-          <div class="grid md:grid-cols-4 gap-6">
-              <div>
-                  <h3 class="text-4xl font-bold text-blue-600">4.8/5</h3>
-                  <p class="text-gray-600">Customer Rating</p>
-              </div>
-              <div>
-                  <h3 class="text-4xl font-bold text-blue-600">500K+</h3>
-                  <p class="text-gray-600">Quotes Processed</p>
-              </div>
-              <div>
-                  <h3 class="text-4xl font-bold text-blue-600">30+</h3>
-                  <p class="text-gray-600">Insurance Partners</p>
-              </div>
-              <div>
-                  <h3 class="text-4xl font-bold text-blue-600">$750</h3>
-                  <p class="text-gray-600">Avg. Annual Savings</p>
-              </div>
-          </div>
-      </div>
+                        <a href="https://www.anrdoezrs.net/click-101029675-15735995" target="_blank"
+                            onclick="setTimeout(function() { window.location = 'https://trkmcl.com/7o4zrkwn9q/6d8q0okd4o'; }, 100);"
+                            class="w-full bg-green-500 text-white py-4 rounded-lg text-xl font-bold 
+                          hover:bg-green-600 transition duration-300 pulse-button shadow-xl text-responsive">
+                            Get My Free Quote Now!
+                        </a>
+                    </div>
 
-      <!-- Final CTA -->
-      <div class="text-center mt-16">
-          <a href="https://www.autoquoteguide.com/quote/vehicle-make?clickid=37be34c3c1434ef58671225a9d020bf4" 
-             class="inline-block bg-green-500 text-white px-12 py-5 rounded-lg text-xl font-bold 
-                    hover:bg-green-600 transition duration-300 transform hover:scale-105 
-                    shadow-lg hover:shadow-xl">
-              Compare Quotes Now - It's Free! 🚗
-          </a>
-      </div>
-  </div>
+                    <div class="hidden-mobile md:block">
+                        <div
+                            class="bg-blue-100 rounded-lg p-6 flex items-center justify-center h-full animate__animated animate__zoomIn">
+                            <div class="text-center">
+                                <svg class="w-24 h-24 mx-auto text-blue-500 mb-4" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                                <h3 class="text-2xl font-bold text-blue-700">Save Money Now</h3>
+                                <p class="text-blue-600 mt-2">Quick, Easy, Affordable Insurance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <footer class="bg-gray-900 text-white py-6 mt-12">
-      <div class="container mx-auto text-center">
-          <p>&copy; 2025 Auto Quote Guide. All Rights Reserved.</p>
-      </div>
-  </footer>
+            <div class="bg-gray-100 p-4 text-center text-sm">
+                <p>🔒 Secure & Confidential | No Obligation Quote</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        history.pushState(null, null, location.href);
+
+        window.onpopstate = function (event) {
+            location.href = 'https://join.trendndailyofficial.com/aff_c?offer_id=16793&aff_id=2130';
+        }
+    </script>
 </body>
+
 </html>
