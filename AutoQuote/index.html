@@ -47,6 +47,29 @@
                 font-size: 1rem;
             }
         }
+
+        #privacyModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 70%;
+            overflow-y: auto;
+        }
     </style>
 </head>
 
@@ -130,7 +153,62 @@
             </div>
 
             <div class="bg-gray-100 p-4 text-center text-sm">
-                <p>🔒 Secure & Confidential | No Obligation Quote</p>
+                <p>🔒 Secure & Confidential | No Obligation Quote | <a href="#" id="privacyLink"
+                        class="text-blue-500 underline">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 z-50 flex items-center justify-center">
+        <div class="modal-content bg-white p-8 rounded-lg shadow-2xl max-w-2xl mx-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Privacy Policy</h2>
+                <button id="closeModal" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <h3 class="font-semibold text-xl">Information Collection and Use</h3>
+                <p>Little-Know Cross Border LLC ("we", "us", "our") takes your privacy seriously. When you use our
+                    insurance quote
+                    services, we may collect the following personal information:</p>
+
+                <ul class="list-disc pl-5">
+                    <li>Full Name</li>
+                    <li>Contact Phone Number</li>
+                    <li>Email Address</li>
+                    <li>Vehicle Information</li>
+                    <li>Driving Record</li>
+                </ul>
+
+                <h3 class="font-semibold text-xl mt-4">Purpose of Information Use</h3>
+                <p>The information we collect is used solely for:</p>
+                <ul class="list-disc pl-5">
+                    <li>Providing accurate auto insurance quotes</li>
+                    <li>Contacting you to complete insurance consultation</li>
+                    <li>Improving the quality of our services</li>
+                </ul>
+
+                <h3 class="font-semibold text-xl mt-4">Information Protection</h3>
+                <p>We employ industry-standard security measures to protect your personal information from unauthorized
+                    access, disclosure, alteration, or destruction.</p>
+
+                <h3 class="font-semibold text-xl mt-4">Data Sharing and Consent</h3>
+                <p>We may share your information with authorized insurance providers to facilitate quote processing. By
+                    using our service, you consent to this limited sharing.</p>
+
+                <h3 class="font-semibold text-xl mt-4">Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul class="list-disc pl-5">
+                    <li>Request access to your personal information</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of your information</li>
+                </ul>
+
+                <h3 class="font-semibold text-xl mt-4">Contact Us</h3>
+                <p>For any privacy-related questions or concerns, please contact:</p>
+                <p>Little-Know Cross Border LLC</p>
+                <p>Email: contact@Little-know.com</p>
+                <p>Last Updated: June 2025</p>
             </div>
         </div>
     </div>
@@ -141,6 +219,23 @@
         window.onpopstate = function (event) {
             location.href = 'https://join.trendndailyofficial.com/aff_c?offer_id=16793&aff_id=2130';
         }
+
+        // 隐私政策模态框交互脚本
+        document.getElementById('privacyLink').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('privacyModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeModal').addEventListener('click', function () {
+            document.getElementById('privacyModal').style.display = 'none';
+        });
+
+        // 点击模态框外部关闭
+        document.getElementById('privacyModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
     </script>
 </body>
 
