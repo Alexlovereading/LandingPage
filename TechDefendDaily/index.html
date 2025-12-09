@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The $29 Gadget That Stops Digital Pickpockets | SmartTech Trends</title>
-    
-    <!-- 1. Tailwind CSS (CDN for speed/simplicity as requested) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- AnyTrack Tracking Code -->
+
+    <!-- 1. Tailwind：改成纯 CSS 文件 + preload，避免大号 JS 阻塞渲染 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.17/tailwind.min.css" as="style"
+        onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.17/tailwind.min.css">
+    </noscript>
+
+    <!-- 2.AnyTrack Tracking Code -->
     <script>!function (e, t, n, s, a) { (a = t.createElement(n)).async = !0, a.src = "https://assets.anytrack.io/dYtugCAxXMEy.js", (t = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, t), e[s] = e[s] || function () { (e[s].q = e[s].q || []).push(arguments) } }(window, document, "script", "AnyTrack");</script>
     <!-- End AnyTrack Tracking Code -->
 
 
-    <!-- 2. Font Optimization: Preconnect to Google Fonts -->
+    <!-- 3. Google Fonts：保留，但改成 preload + onload，减少“渲染阻塞”评分 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts-d-gstatic-d-com-s-gmn.tuangouai.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@24,400,0,0,50&display=swap" rel="stylesheet">
+
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@24,400,0,0,50&display=swap"
+        as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@24,400,0,0,50&display=swap"
+            rel="stylesheet">
+    </noscript>
 
     <style>
         /* Core Critical CSS */
-        body { font-family: 'Inter', sans-serif; }
-        .article-text { font-family: 'Merriweather', serif; }
-        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .article-text {
+            font-family: 'Merriweather', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         /* Custom Animations */
         @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
         }
-        .pulse-animation { animation: pulse-blue 2s infinite; }
-        
+
+        .pulse-animation {
+            animation: pulse-blue 2s infinite;
+        }
+
         /* Sticky CTA Transition */
         .sticky-cta {
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
             will-change: transform;
         }
-        .sticky-cta.visible { transform: translateY(0); }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
 
         /* Modal Utilities */
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
 
@@ -58,7 +98,8 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-blue-600 text-3xl">shield_lock</span>
-                <span class="font-bold text-xl tracking-tight text-gray-900">TechDefend<span class="text-blue-600">Daily</span></span>
+                <span class="font-bold text-xl tracking-tight text-gray-900">TechDefend<span
+                        class="text-blue-600">Daily</span></span>
             </div>
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-500">
@@ -67,7 +108,8 @@
                 <span class="hover:text-blue-600 cursor-pointer">Lifestyle</span>
             </div>
             <!-- Header CTA -->
-            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition" onclick="scrollToOffer()">
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-semibold transition"
+                onclick="scrollToOffer()">
                 Check Availability
             </button>
         </div>
@@ -86,19 +128,20 @@
                 I Never Knew Hackers Could Hack Me Through My Pocket – This $29.9 Card Kills the Hack Instantly.
             </h1>
             <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                Identity theft is at an all-time high. Here is the simple trick savvy travelers are using to stop electronic pickpockets instantly.
+                Identity theft is at an all-time high. Here is the simple trick savvy travelers are using to stop
+                electronic pickpockets instantly.
             </p>
 
             <!-- Author Info -->
             <div class="flex items-center justify-between border-t border-b border-gray-200 py-4">
                 <div class="flex items-center gap-3">
-                    <img src="https://prod-custom-assets.gu-plat.com/getwallet-defender.com/wallet-defender-offer-02-29.99-digital-entries-as-bundles/offer-x-2/images/review-img1.webp" 
-                         alt="Author Michael Anderson" 
-                         width="40" height="40"
-                         class="w-10 h-10 rounded-full object-cover border border-gray-200">
+                    <img src="https://prod-custom-assets.gu-plat.com/getwallet-defender.com/wallet-defender-offer-02-29.99-digital-entries-as-bundles/offer-x-2/images/review-img1.webp"
+                        alt="Author Michael Anderson" width="40" height="40"
+                        class="w-10 h-10 rounded-full object-cover border border-gray-200">
                     <div>
                         <p class="text-sm font-bold text-gray-900">By Michael Anderson</p>
-                        <p class="text-xs text-gray-500">Senior Security Analyst • <span id="current-date">December 8, 2025</span></p>
+                        <p class="text-xs text-gray-500">Senior Security Analyst • <span id="current-date">December 8,
+                                2025</span></p>
                     </div>
                 </div>
                 <div class="flex gap-2 text-gray-400">
@@ -111,10 +154,11 @@
         <!-- Hero Image (LCP Optimized with fetchpriority) -->
         <figure class="mb-10">
             <img fetchpriority="high"
-                 src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741347/WD2_92e90b54c7d1a2839289467237047a53.webp" 
-                 alt="Man shocked by phone notification on subway" 
-                 class="w-full h-auto rounded-xl shadow-lg mb-2 aspect-video object-cover">
-            <figcaption class="text-center text-sm text-gray-500 italic">It started with a simple notification on my evening commute...</figcaption>
+                src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741347/WD2_92e90b54c7d1a2839289467237047a53.webp"
+                alt="Man shocked by phone notification on subway"
+                class="w-full h-auto rounded-xl shadow-lg mb-2 aspect-video object-cover">
+            <figcaption class="text-center text-sm text-gray-500 italic">It started with a simple notification on my
+                evening commute...</figcaption>
         </figure>
 
         <!-- Article Body -->
@@ -123,7 +167,9 @@
                 <strong>It was a Tuesday evening in Chicago, and the L train was packed shoulder-to-shoulder.</strong>
             </p>
             <p class="mb-4">
-                I was listening to a podcast, minding my own business, with my leather wallet safely tucked in my front pocket. I’ve lived in the city for 15 years. I know the drill: keep your head down, hold onto your bag, check your pockets.
+                I was listening to a podcast, minding my own business, with my leather wallet safely tucked in my front
+                pocket. I’ve lived in the city for 15 years. I know the drill: keep your head down, hold onto your bag,
+                check your pockets.
             </p>
             <p class="mb-4">
                 But when I stepped off at my stop, my phone buzzed.
@@ -134,7 +180,8 @@
                 </p>
             </div>
             <p class="mb-4">
-                My stomach dropped. I immediately checked my pocket. My wallet was still there. I pulled it out—my credit cards were all there. My ID was there. Nothing was missing.
+                My stomach dropped. I immediately checked my pocket. My wallet was still there. I pulled it out—my
+                credit cards were all there. My ID was there. Nothing was missing.
             </p>
             <p class="mb-4">
                 "That's impossible," I thought. "I have my card right here in my hand."
@@ -143,43 +190,53 @@
                 Then another buzz. <strong>$200 at Target. Approved.</strong>
             </p>
             <p class="mb-4">
-                I realized with horror that I wasn't being paranoid. I was being robbed in real-time, and the thief didn't even have to touch me.
+                I realized with horror that I wasn't being paranoid. I was being robbed in real-time, and the thief
+                didn't even have to touch me.
             </p>
 
             <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Rise of the "Invisible Thief"</h3>
             <p class="mb-4">
-                I spent the next three hours on the phone with my bank's fraud department. The specialist explained exactly what happened.
+                I spent the next three hours on the phone with my bank's fraud department. The specialist explained
+                exactly what happened.
             </p>
             <p class="mb-4">
-                "It's called <strong>RFID Skimming</strong>, Mr. Anderson. Thieves use cheap handheld scanners—you can buy them online for less than $50—to scan the chips in your credit cards through your clothes and wallet. They can clone your card data in seconds just by standing near you on a crowded train."
+                "It's called <strong>RFID Skimming</strong>, Mr. Anderson. Thieves use cheap handheld scanners—you can
+                buy them online for less than $50—to scan the chips in your credit cards through your clothes and
+                wallet. They can clone your card data in seconds just by standing near you on a crowded train."
             </p>
 
             <figure class="my-8">
                 <img loading="lazy"
-                     src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741346/WD1_92e90b54c7d1a2839289467237047a53.webp" 
-                     alt="RFID Skimming Illustration" 
-                     class="w-full rounded-xl shadow-md aspect-video object-cover">
-                <figcaption class="text-center text-sm text-gray-500 mt-2">Thieves can scan your data from feet away without you ever knowing.</figcaption>
+                    src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741346/WD1_92e90b54c7d1a2839289467237047a53.webp"
+                    alt="RFID Skimming Illustration" class="w-full rounded-xl shadow-md aspect-video object-cover">
+                <figcaption class="text-center text-sm text-gray-500 mt-2">Thieves can scan your data from feet away
+                    without you ever knowing.</figcaption>
             </figure>
 
             <p class="mb-4">
-                I felt violated. I thought my expensive leather wallet was safe. I was wrong. Traditional leather, nylon, and even regular fabric offer <strong>zero protection</strong> against these powerful scanners.
+                I felt violated. I thought my expensive leather wallet was safe. I was wrong. Traditional leather,
+                nylon, and even regular fabric offer <strong>zero protection</strong> against these powerful scanners.
             </p>
             <p class="mb-4">
                 I asked the specialist, "So what do I do? Wrap my wallet in aluminum foil?"
             </p>
             <p class="mb-4">
-                She laughed. “You could. But most people just use a thin <strong>shielding card</strong> that slips inside their wallet and blocks those scans.”
+                She laughed. “You could. But most people just use a thin <strong>shielding card</strong> that slips
+                inside their wallet and blocks those scans.”
             </p>
 
             <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">The Solution That Changed Everything</h3>
             <p class="mb-4">
-               That stuck with me. That night, I started searching around and reading reviews. A lot of people kept mentioning a card called Wallet Defender — basically a slim, credit-card–sized shield you just leave in your wallet.
+                That stuck with me. That night, I started searching around and reading reviews. A lot of people kept
+                mentioning a card called Wallet Defender — basically a slim, credit-card–sized shield you just leave in
+                your wallet.
             </p>
 
-             </p>
+            </p>
             <p class="mb-4">
-                I decided to try it. When it arrived, I was honestly skeptical. It just looked like a premium black card with a carbon-fiber style finish. But inside, it uses layered signal-blocking materials similar to what’s used in security access badges, designed to interfere with the scanners thieves rely on.
+                I decided to try it. When it arrived, I was honestly skeptical. It just looked like a premium black card
+                with a carbon-fiber style finish. But inside, it uses layered signal-blocking materials similar to
+                what’s used in security access badges, designed to interfere with the scanners thieves rely on.
             </p>
 
             <!-- Product Feature Box -->
@@ -189,28 +246,32 @@
                 </h4>
                 <div class="flex flex-col md:flex-row gap-6 items-center">
                     <div class="w-full md:w-1/2">
-                        <img loading="lazy" 
-                             src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741348/WD3_92e90b54c7d1a2839289467237047a53.webp" 
-                             alt="Wallet Defender Card" 
-                             class="w-full rounded-lg shadow-md hover:scale-105 transition duration-300">
+                        <img loading="lazy"
+                            src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741348/WD3_92e90b54c7d1a2839289467237047a53.webp"
+                            alt="Wallet Defender Card"
+                            class="w-full rounded-lg shadow-md hover:scale-105 transition duration-300">
                     </div>
                     <div class="w-full md:w-1/2">
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <span class="material-symbols-outlined text-green-500 mr-2 mt-0.5">check_circle</span>
-                                <span class="text-sm"><strong>Instantly Blocks RFID/NFC:</strong> Creates a 2.4-inch electronic shield around your wallet.</span>
+                                <span class="text-sm"><strong>Instantly Blocks RFID/NFC:</strong> Creates a 2.4-inch
+                                    electronic shield around your wallet.</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="material-symbols-outlined text-green-500 mr-2 mt-0.5">check_circle</span>
-                                <span class="text-sm"><strong>No Batteries Needed:</strong> It harnesses the energy from the thief's scanner to power itself.</span>
+                                <span class="text-sm"><strong>No Batteries Needed:</strong> It harnesses the energy from
+                                    the thief's scanner to power itself.</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="material-symbols-outlined text-green-500 mr-2 mt-0.5">check_circle</span>
-                                <span class="text-sm"><strong>Fits Any Wallet:</strong> Same size as a credit card. No need to buy a bulky new wallet.</span>
+                                <span class="text-sm"><strong>Fits Any Wallet:</strong> Same size as a credit card. No
+                                    need to buy a bulky new wallet.</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="material-symbols-outlined text-green-500 mr-2 mt-0.5">check_circle</span>
-                                <span class="text-sm"><strong>Unbreakable:</strong> Waterproof, crushproof, and built to last a lifetime.</span>
+                                <span class="text-sm"><strong>Unbreakable:</strong> Waterproof, crushproof, and built to
+                                    last a lifetime.</span>
                             </li>
                         </ul>
                     </div>
@@ -219,48 +280,60 @@
 
             <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">I Put It To The Test</h3>
             <p class="mb-4">
-                I wanted to be sure. I have a friend who works in IT security. I took the Wallet Defender and my credit card to his lab.
+                I wanted to be sure. I have a friend who works in IT security. I took the Wallet Defender and my credit
+                card to his lab.
             </p>
             <p class="mb-4">
                 We tried to scan my card with his professional RFID reader.
             </p>
             <p class="mb-4">
                 <strong>Without Defender:</strong> *BEEP*. Data captured instantly. <br>
-                <strong>With Defender:</strong> Silence. We tried different angles. We pressed the scanner right up against the wallet. Nothing.
+                <strong>With Defender:</strong> Silence. We tried different angles. We pressed the scanner right up
+                against the wallet. Nothing.
             </p>
             <p class="mb-4">
-                The <strong>Wallet Defender</strong> created an impenetrable "halo" of protection. It was like an invisibility cloak for my financial life.
+                The <strong>Wallet Defender</strong> created an impenetrable "halo" of protection. It was like an
+                invisibility cloak for my financial life.
             </p>
 
             <!-- Visual Demonstration -->
             <div class="my-10">
-                <div class="relative rounded-xl overflow-hidden shadow-2xl group cursor-pointer" onclick="scrollToOffer()">
+                <div class="relative rounded-xl overflow-hidden shadow-2xl group cursor-pointer"
+                    onclick="scrollToOffer()">
                     <img loading="lazy"
-                         src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741667/Adv.-Hero_59e542b2f0e9b9727cab423ebede99ee.webp" 
-                         alt="Protection Field Visualization" 
-                         class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 aspect-video">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
-                        <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold w-fit mb-2">VERIFIED TECHNOLOGY</span>
+                        src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741667/Adv.-Hero_59e542b2f0e9b9727cab423ebede99ee.webp"
+                        alt="Protection Field Visualization"
+                        class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-700 aspect-video">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+                        <span
+                            class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold w-fit mb-2">VERIFIED
+                            TECHNOLOGY</span>
                         <h3 class="text-white text-xl font-bold">13.56 MHz Jamming Technology</h3>
-                        <p class="text-gray-200 text-sm mt-1">Stops scanners before they can even read a single byte of data.</p>
+                        <p class="text-gray-200 text-sm mt-1">Stops scanners before they can even read a single byte of
+                            data.</p>
                     </div>
                 </div>
             </div>
 
             <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Why We Need It ?</h3>
             <p class="mb-4">
-                Identity theft isn't just annoying; it's expensive. The average victim spends <strong>200+ hours</strong> and <strong>$1,300+</strong> recovering their identity.
+                Identity theft isn't just annoying; it's expensive. The average victim spends <strong>200+
+                    hours</strong> and <strong>$1,300+</strong> recovering their identity.
             </p>
             <p class="mb-4">
-                For the price of a couple of coffees, you can ensure that you never have to make that panicked call to your bank.
+                For the price of a couple of coffees, you can ensure that you never have to make that panicked call to
+                your bank.
             </p>
             <p class="mb-4">
-                I now keep one in my wallet, one in my passport holder, and I bought a 3-pack for my wife and kids. It's the cheapest insurance policy I've ever bought.
+                I now keep one in my wallet, one in my passport holder, and I bought a 3-pack for my wife and kids. It's
+                the cheapest insurance policy I've ever bought.
             </p>
         </article>
 
         <!-- Dynamic CTA Section (The Offer) -->
-        <section id="offer-section" class="mt-12 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative transform transition-all hover:shadow-2xl">
+        <section id="offer-section"
+            class="mt-12 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden relative transform transition-all hover:shadow-2xl">
             <div class="bg-blue-600 p-4 text-center">
                 <h2 class="text-2xl font-bold text-white">Exclusive Reader Offer</h2>
                 <p class="text-blue-100 text-sm">Limited availability for our readers</p>
@@ -270,13 +343,14 @@
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <!-- Product Image with Discount Badge -->
                     <div class="w-full md:w-1/2 relative">
-                        <div class="absolute top-0 right-0 bg-red-500 text-white font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10 animate-bounce shadow-md">
+                        <div
+                            class="absolute top-0 right-0 bg-red-500 text-white font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10 animate-bounce shadow-md">
                             50% OFF
                         </div>
                         <img loading="lazy"
-                             src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741345/WD4_92e90b54c7d1a2839289467237047a53.webp" 
-                             alt="Wallet Defender Pack" 
-                             class="w-full rounded-lg bg-gray-50 p-4 object-cover aspect-square">
+                            src="https://prod-assets.gu-plat.com/imager-x/uploads/Wallet-Defender/741345/WD4_92e90b54c7d1a2839289467237047a53.webp"
+                            alt="Wallet Defender Pack"
+                            class="w-full rounded-lg bg-gray-50 p-4 object-cover aspect-square">
                     </div>
 
                     <!-- Offer Details -->
@@ -286,32 +360,42 @@
                             <span class="text-4xl font-extrabold text-blue-600">$29.99</span>
                         </div>
 
-                        <div class="bg-green-50 border border-green-200 rounded p-2 flex items-center gap-2 text-green-700 text-sm font-medium">
-                            <span class="material-symbols-outlined text-base">inventory_2</span> In Stock - Worldwide multi-warehouse shipping
+                        <div
+                            class="bg-green-50 border border-green-200 rounded p-2 flex items-center gap-2 text-green-700 text-sm font-medium">
+                            <span class="material-symbols-outlined text-base">inventory_2</span> In Stock - Worldwide
+                            multi-warehouse shipping
                         </div>
 
                         <!-- Dynamic Stock Counter -->
                         <div class="space-y-1 bg-gray-50 p-3 rounded-lg border border-gray-100">
                             <div class="flex justify-between text-xs text-gray-500 font-medium">
                                 <span>High Demand</span>
-                                <span class="text-red-600 font-extrabold animate-pulse" id="stock-count">Only 3 left</span>
+                                <span class="text-red-600 font-extrabold animate-pulse" id="stock-count">Only 3
+                                    left</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-                                <div id="stock-bar" class="h-2.5 rounded-full w-[85%] transition-all duration-1000 bg-red-600" style="width: 15%;"></div>
+                                <div id="stock-bar"
+                                    class="h-2.5 rounded-full w-[85%] transition-all duration-1000 bg-red-600"
+                                    style="width: 15%;"></div>
                             </div>
                         </div>
 
-                        <a href="https://getwallet-defender.com/offer-02/?lpid=2617&source_id=DL&utm_source=33507&utm_medium=&utm_term=1085&aff_id=33507&sub_id=&req_id=&oid=1085&device_type=&country_name=&uid=2617&oid=1085&affid=33507" 
-                           target="_blank"
-                           onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/20-christmas-gift-ideas/'; }, 100);"
-                           class="pulse-animation w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg shadow-lg transform transition hover:-translate-y-1 flex items-center justify-center gap-2 group">
+                        <a href="https://getwallet-defender.com/offer-02/?lpid=2617&source_id=DL&utm_source=33507&utm_medium=&utm_term=1085&aff_id=33507&sub_id=&req_id=&oid=1085&device_type=&country_name=&uid=2617&oid=1085&affid=33507"
+                            target="_blank"
+                            onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/20-christmas-gift-ideas/'; }, 100);"
+                            class="pulse-animation w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg shadow-lg transform transition hover:-translate-y-1 flex items-center justify-center gap-2 group">
                             <span>Get My Wallet Defender</span>
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition">arrow_forward</span>
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-1 transition">arrow_forward</span>
                         </a>
 
                         <div class="flex justify-center gap-4 text-xs text-gray-500 mt-4">
-                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-blue-600">verified</span> 30-Day Guarantee</span>
-                            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base text-blue-600">lock</span> Secure Checkout</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-base text-blue-600">verified</span> 30-Day
+                                Guarantee</span>
+                            <span class="flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-base text-blue-600">lock</span> Secure
+                                Checkout</span>
                         </div>
                     </div>
                 </div>
@@ -335,12 +419,18 @@
                         </div>
                         <span class="text-sm font-bold text-gray-900">Works exactly as described</span>
                     </div>
-                    <p class="text-gray-600 text-sm italic">"I travel to NYC for work monthly. After my coworker got scanned on the subway, I bought this. Tested it at the office turnstile—it completely blocked my card access card too! Feel much safer now."</p>
+                    <p class="text-gray-600 text-sm italic">"I travel to NYC for work monthly. After my coworker got
+                        scanned on the subway, I bought this. Tested it at the office turnstile—it completely blocked my
+                        card access card too! Feel much safer now."</p>
                     <div class="mt-4 flex items-center gap-3">
-                        <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">JD</div>
+                        <div
+                            class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold text-xs">
+                            JD</div>
                         <div class="text-xs">
                             <p class="font-bold text-gray-900">James D.</p>
-                            <p class="text-green-600 flex items-center"><span class="material-symbols-outlined text-[12px] mr-1">check_circle</span> Verified Buyer</p>
+                            <p class="text-green-600 flex items-center"><span
+                                    class="material-symbols-outlined text-[12px] mr-1">check_circle</span> Verified
+                                Buyer</p>
                         </div>
                     </div>
                 </div>
@@ -357,12 +447,18 @@
                         </div>
                         <span class="text-sm font-bold text-gray-900">Best investment</span>
                     </div>
-                    <p class="text-gray-600 text-sm italic">"I love that I didn't have to throw away my husband's expensive leather wallet. I just slid this card in behind his ID. Invisible protection. Brilliant."</p>
+                    <p class="text-gray-600 text-sm italic">"I love that I didn't have to throw away my husband's
+                        expensive leather wallet. I just slid this card in behind his ID. Invisible protection.
+                        Brilliant."</p>
                     <div class="mt-4 flex items-center gap-3">
-                        <div class="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-bold text-xs">SM</div>
+                        <div
+                            class="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center font-bold text-xs">
+                            SM</div>
                         <div class="text-xs">
                             <p class="font-bold text-gray-900">Sarah M.</p>
-                            <p class="text-green-600 flex items-center"><span class="material-symbols-outlined text-[12px] mr-1">check_circle</span> Verified Buyer</p>
+                            <p class="text-green-600 flex items-center"><span
+                                    class="material-symbols-outlined text-[12px] mr-1">check_circle</span> Verified
+                                Buyer</p>
                         </div>
                     </div>
                 </div>
@@ -374,28 +470,40 @@
         <section class="mt-16 mb-12">
             <h3 class="text-xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h3>
             <div class="space-y-4">
-                <details class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
+                <details
+                    class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
                     <summary class="font-medium text-gray-800 flex justify-between items-center select-none">
                         Do I need one for every credit card?
-                        <span class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
                     </summary>
-                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">No! One Wallet Defender protects your entire wallet (up to 2.4 inches thick). Just place it in the middle or outer slot, and it creates a protective field for all cards inside.</p>
+                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">No! One Wallet Defender
+                        protects your entire wallet (up to 2.4 inches thick). Just place it in the middle or outer slot,
+                        and it creates a protective field for all cards inside.</p>
                 </details>
 
-                <details class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
+                <details
+                    class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
                     <summary class="font-medium text-gray-800 flex justify-between items-center select-none">
                         Does it use batteries?
-                        <span class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
                     </summary>
-                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">Never. The card uses passive energy harvesting technology. It actually uses the power directly from the thief's scanner to power its own jamming signal. It never needs charging.</p>
+                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">Never. The card uses passive
+                        energy harvesting technology. It actually uses the power directly from the thief's scanner to
+                        power its own jamming signal. It never needs charging.</p>
                 </details>
 
-                <details class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
+                <details
+                    class="bg-white border border-gray-200 rounded-lg p-4 cursor-pointer group transition-all duration-200 hover:shadow-sm open:bg-gray-50">
                     <summary class="font-medium text-gray-800 flex justify-between items-center select-none">
                         Will it fit my wallet?
-                        <span class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
+                        <span
+                            class="material-symbols-outlined transform group-open:rotate-180 transition text-gray-400">expand_more</span>
                     </summary>
-                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">Yes. It is exactly the same size and thickness as a standard credit card (ISO/IEC 7810). It fits in men's bifolds, women's purses, and even minimalist metal card holders.</p>
+                    <p class="mt-3 text-gray-600 text-sm pl-2 border-l-2 border-blue-500">Yes. It is exactly the same
+                        size and thickness as a standard credit card (ISO/IEC 7810). It fits in men's bifolds, women's
+                        purses, and even minimalist metal card holders.</p>
                 </details>
             </div>
         </section>
@@ -417,29 +525,37 @@
     </footer>
 
     <!-- Mobile Sticky CTA Bar -->
-    <div id="mobile-cta" class="sticky-cta fixed bottom-0 left-0 w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-4 z-50 md:hidden border-t border-gray-200 flex items-center justify-between visible">
+    <div id="mobile-cta"
+        class="sticky-cta fixed bottom-0 left-0 w-full bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] p-4 z-50 md:hidden border-t border-gray-200 flex items-center justify-between visible">
         <div>
             <p class="text-xs text-gray-500 line-through">$59.98</p>
             <p class="text-xl font-bold text-blue-600">$29.99</p>
         </div>
-        <a href="https://getwallet-defender.com/offer-02/?lpid=2617&source_id=DL&utm_source=33507&utm_medium=&utm_term=1085&aff_id=33507&sub_id=&req_id=&oid=1085&device_type=&country_name=&uid=2617&oid=1085&affid=33507" 
-           target="_blank"
-           onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/20-christmas-gift-ideas/'; }, 100);"
-           class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 active:bg-blue-800 transition transform active:scale-95">
+        <a href="https://getwallet-defender.com/offer-02/?lpid=2617&source_id=DL&utm_source=33507&utm_medium=&utm_term=1085&aff_id=33507&sub_id=&req_id=&oid=1085&device_type=&country_name=&uid=2617&oid=1085&affid=33507"
+            target="_blank"
+            onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/20-christmas-gift-ideas/'; }, 100);"
+            class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 active:bg-blue-800 transition transform active:scale-95">
             Check Availability
         </a>
     </div>
 
     <!-- Processing Modal (Simplified & Optimized) -->
-    <div id="processing-modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] backdrop-blur-sm transition-opacity opacity-0">
-        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl transform scale-95 transition-transform">
+    <div id="processing-modal"
+        class="fixed inset-0 bg-black/60 hidden items-center justify-center z-[100] backdrop-blur-sm transition-opacity opacity-0">
+        <div
+            class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl transform scale-95 transition-transform">
             <!-- Spinner -->
-            <div class="w-16 h-16 border-4 border-blue-100 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
+            <div class="w-16 h-16 border-4 border-blue-100 border-t-blue-600 rounded-full animate-spin mx-auto mb-4">
+            </div>
             <h3 class="text-xl font-bold text-gray-900 mb-2">Checking Availability...</h3>
             <p class="text-gray-500 text-sm mb-6">Connecting to warehouse inventory.</p>
             <div class="space-y-2 text-xs font-medium text-gray-500 text-left w-fit mx-auto">
-                <p class="flex items-center"><span class="material-symbols-outlined text-blue-500 text-sm mr-2">check_circle</span> Verifying Discount Code</p>
-                <p class="flex items-center"><span class="material-symbols-outlined text-blue-500 text-sm mr-2">check_circle</span> Confirming Stock</p>
+                <p class="flex items-center"><span
+                        class="material-symbols-outlined text-blue-500 text-sm mr-2">check_circle</span> Verifying
+                    Discount Code</p>
+                <p class="flex items-center"><span
+                        class="material-symbols-outlined text-blue-500 text-sm mr-2">check_circle</span> Confirming
+                    Stock</p>
             </div>
         </div>
     </div>
@@ -461,7 +577,7 @@
                     const windowHeight = window.innerHeight;
                     // Logic: Hide CTA if the main offer is currently visible on screen
                     const offerInView = (rect.top < windowHeight && rect.bottom >= 0);
-                    
+
                     if (window.scrollY > 600 && !offerInView) {
                         mobileCta.classList.add('visible');
                     } else {
@@ -475,7 +591,7 @@
             const stockEl = document.getElementById('stock-count');
             const barEl = document.getElementById('stock-bar');
 
-            if(stockEl && barEl) {
+            if (stockEl && barEl) {
                 setInterval(() => {
                     if (stock > 3 && Math.random() > 0.6) {
                         stock--;
@@ -500,9 +616,10 @@
         });
 
         // Global function for onclick handlers
-        window.scrollToOffer = function() {
+        window.scrollToOffer = function () {
             document.getElementById('offer-section').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
+
 </html>
