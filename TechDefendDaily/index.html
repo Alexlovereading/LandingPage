@@ -6,30 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The $29 Gadget That Stops Digital Pickpockets | SmartTech Trends</title>
 
-    <!-- 1. Tailwind：改成纯 CSS 文件 + preload，避免大号 JS 阻塞渲染 -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.17/tailwind.min.css" as="style"
-        onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.17/tailwind.min.css">
-    </noscript>
+    <!-- 1. Tailwind CSS (CDN for speed/simplicity as requested) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 2.AnyTrack Tracking Code -->
+    <!-- AnyTrack Tracking Code -->
     <script>!function (e, t, n, s, a) { (a = t.createElement(n)).async = !0, a.src = "https://assets.anytrack.io/dYtugCAxXMEy.js", (t = t.getElementsByTagName(n)[0]).parentNode.insertBefore(a, t), e[s] = e[s] || function () { (e[s].q = e[s].q || []).push(arguments) } }(window, document, "script", "AnyTrack");</script>
     <!-- End AnyTrack Tracking Code -->
 
 
-    <!-- 3. Google Fonts：保留，但改成 preload + onload，减少“渲染阻塞”评分 -->
+    <!-- 2. Font Optimization: Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts-d-gstatic-d-com-s-gmn.tuangouai.com" crossorigin>
-
-    <link rel="preload"
+    <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@24,400,0,0,50&display=swap"
-        as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@24,400,0,0,50&display=swap"
-            rel="stylesheet">
-    </noscript>
+        rel="stylesheet">
 
     <style>
         /* Core Critical CSS */
