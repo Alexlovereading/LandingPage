@@ -4,12 +4,56 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Claim your $750 Walmart Gift Card. Quick and easy sign-up, no payment required." />
     <title>Walmart Gift Card</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://ajax.googleapis.com">
+    <link rel="preconnect" href="https://visit.applyintheprograms.com">
+
+    <!-- Critical CSS inline -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 30px 20px
+        }
+
+        .main-title {
+            font-size: 38px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            text-align: center
+        }
+
+        .product-img {
+            width: 100%;
+            max-width: 320px;
+            display: block;
+            margin: 0 auto 30px;
+            transition: transform .4s ease, margin-bottom .4s ease, max-width .4s ease, height .4s ease;
+            transform-origin: top center
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script type="text/javascript"
-        src="https://visit.applyintheprograms.com/track.js?rtkcmpid=689b18555517dfe68c09f558"></script>
+
+    <!-- Defer non-critical scripts -->
+    <script type="text/javascript" src="https://visit.applyintheprograms.com/track.js?rtkcmpid=689b18555517dfe68c09f558"
+        defer></script>
 </head>
 
 <body>
@@ -17,7 +61,8 @@
         <section id="header-section">
             <div class="start-wrapper">
                 <h1 class="main-title">Claim a $750 Walmart Gift Card</h1>
-                <img src="images/product.png" alt="Walmart Gift Card" class="product-img" />
+                <img src="images/product.jpg" alt="Walmart Gift Card" class="product-img" width="320" height="240"
+                    loading="eager" />
 
                 <div class="benefits-wrap">
                     <div class="benefit"><span class="check">✅</span><span>Takes less than 30 seconds</span></div>
@@ -128,7 +173,7 @@
                 </div>
             </div>
             <div class="add-comment">
-                <img src="images/user.jpg" alt="User" />
+                <img src="images/user.jpg" alt="User" width="50" height="50" loading="lazy" />
                 <textarea placeholder="Add a comment..."></textarea>
                 <div class="comment-button-box">
                     <div class="comment-button-left">
@@ -144,11 +189,11 @@
             <div class="main-comments">
                 <div class="comment sort-coms start-coms" data-order="1" data-likes="1">
                     <a class="comment-user-img" href="#willa.everly" target="_blank"><img src="images/1.jpg" width="48"
-                            height="48" alt="Willa Everly" /></a>
+                            height="48" alt="Willa Everly" loading="lazy" /></a>
                     <a href="#willa.everly" target="_blank" class="comment-user-name"><span> Beverly Maguire </span></a>
                     <p class="comment-text">In my honest opinion, this marketing research program has the best
                         opportunities and I thank them for this special program!</p>
-                    <img class="fb-img" src="images/v9.jpg" width="210" />
+                    <img class="fb-img" src="images/v9.jpg" width="210" loading="lazy" />
                     <div class="comment-meta">
                         <button>Like</button><span> · </span>
                         <button>Reply</button><span> · </span>
@@ -159,7 +204,7 @@
 
                 <div class="comment sort-coms start-coms" data-order="2" data-likes="1">
                     <a class="comment-user-img" href="#sammie.fenn" target="_blank"><img src="images/2.jpg" width="48"
-                            height="48" alt="Samantha Fenn" /></a>
+                            height="48" alt="Samantha Fenn" loading="lazy" /></a>
                     <a href="#sammie.fenn" target="_blank" class="comment-user-name"><span> Tabitha Atkins </span></a>
                     <p class="comment-text">Went through the steps and now waiting for my packages to arrive. Wonder how
                         long it may take?</p>
@@ -171,7 +216,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -191,12 +237,12 @@
 
                 <div class="comment sort-coms start-coms" data-order="3" data-likes="3">
                     <a class="comment-user-img" href="#laura.fairgrieve" target="_blank"><img src="images/3.jpg"
-                            width="48" height="48" alt="Laura Fairgrieve" /></a>
+                            width="48" height="48" alt="Laura Fairgrieve" loading="lazy" /></a>
                     <a href="#laura.fairgrieve" target="_blank" class="comment-user-name"><span> Sharon Greene
                         </span></a>
                     <p class="comment-text">What a surprise, I received the products an hour ago! I encourage everyone
                         to give it a shot, because you never know!</p>
-                    <img class="fb-img" src="images/v1.jpg" width="210" />
+                    <img class="fb-img" src="images/v1.jpg" width="210" loading="lazy" />
                     <div class="comment-meta">
                         <button>Like</button><span> · </span>
                         <button>Reply</button><span> · </span>
@@ -207,7 +253,7 @@
 
                 <div class="comment sort-coms start-coms" data-order="4" data-likes="7">
                     <a class="comment-user-img" href="#profile.php?id=100042003091688" target="_blank"><img
-                            src="images/4.jpg" width="48" height="48" alt="Antonio Santana" /></a>
+                            src="images/4.jpg" width="48" height="48" alt="Antonio Santana" loading="lazy" /></a>
                     <a href="#profile.php?id=100042003091688" target="_blank" class="comment-user-name"><span>Wilmer
                             Jackson</span></a>
                     <p class="comment-text">Good luck everybody! 🍀</p>
@@ -221,11 +267,11 @@
 
                 <div class="comment sort-coms start-coms" data-order="5" data-likes="7">
                     <a class="comment-user-img" href="#wolf.richardson.14" target="_blank"><img src="images/5.jpg"
-                            width="48" height="48" alt="Wolf Richardson" /></a>
+                            width="48" height="48" alt="Wolf Richardson" loading="lazy" /></a>
                     <a href="#wolf.richardson.14" target="_blank" class="comment-user-name"><span>Jason Day</span></a>
                     <p class="comment-text">My wife is very happy with the products she received. Amazing program. 😍
                     </p>
-                    <img class="fb-img" src="images/v5.jpg" width="210" />
+                    <img class="fb-img" src="images/v5.jpg" width="210" loading="lazy" />
                     <div class="comment-meta">
                         <button>Like</button><span> · </span>
                         <button>Reply</button><span> · </span>
@@ -246,7 +292,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -264,7 +311,7 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#dionne.sturman.9" target="_blank"><img src="images/7.jpg"
-                                width="48" height="48" alt="Dionne Sturman" /></a>
+                                width="48" height="48" alt="Dionne Sturman" loading="lazy" /></a>
                         <a href="#dionne.sturman.9" target="_blank" class="comment-user-name"><span>Molly
                                 Hodges</span></a>
                         <p class="comment-text">Absolutely. Give it a try!</p>
@@ -277,11 +324,11 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#antonio.gentile.562329" target="_blank"><img
-                                src="images/8.jpg" width="48" height="48" alt="Antonio Gentile" /></a>
+                                src="images/8.jpg" width="48" height="48" alt="Antonio Gentile" loading="lazy" /></a>
                         <a href="#antonio.gentile.562329" target="_blank" class="comment-user-name"><span>Louie
                                 Bates</span></a>
                         <p class="comment-text">I confirm as well, I got a lot of products from them</p>
-                        <img class="fb-img" src="images/v2.jpg" width="210" />
+                        <img class="fb-img" src="images/v2.jpg" width="210" loading="lazy" />
                         <div class="comment-meta">
                             <button>Like</button><span> · </span>
                             <button>Reply</button><span> · </span>
@@ -295,7 +342,7 @@
                         <a href="#missmoxon" target="_blank" class="comment-user-name"><span>Patricia Martin</span></a>
                         <p class="comment-text">It's me again! I received the package today and I can confirm now that
                             this is legit 😘</p>
-                        <img class="fb-img" src="images/v3.jpg" width="210" />
+                        <img class="fb-img" src="images/v3.jpg" width="210" loading="lazy" />
                         <div class="comment-meta">
                             <button>Like</button><span> · </span>
                             <button>Reply</button><span> · </span>
@@ -307,12 +354,12 @@
 
                 <div class="comment sort-coms" data-order="6" data-likes="8">
                     <a class="comment-user-img" href="#nicolas.rheault.5" target="_blank"><img src="images/10.jpg"
-                            width="48" height="48" alt="Nicolas Rheault" /></a>
+                            width="48" height="48" alt="Nicolas Rheault" loading="lazy" /></a>
                     <a href="#nicolas.rheault.5" target="_blank" class="comment-user-name"><span>Robert
                             Nelson</span></a>
                     <p class="comment-text">If you have patience, the products will arrive. I got mine after two weeks
                         :D </p>
-                    <img class="fb-img" src="images/v4.jpg" width="210" />
+                    <img class="fb-img" src="images/v4.jpg" width="210" loading="lazy" />
                     <div class="comment-meta">
                         <button>Like</button><span> · </span>
                         <button>Reply</button><span> · </span>
@@ -323,7 +370,7 @@
 
                 <div class="comment sort-coms" data-order="7" data-likes="3">
                     <a class="comment-user-img" href="#profile.php?id=100010528209702" target="_blank"><img
-                            src="images/11.jpg" width="48" height="48" alt="Zoe Bennetts" /></a>
+                            src="images/11.jpg" width="48" height="48" alt="Zoe Bennetts" loading="lazy" /></a>
                     <a href="#profile.php?id=100010528209702" target="_blank" class="comment-user-name"><span>Zoe
                             Bennetts</span></a>
                     <p class="comment-text">Thank you so much for this! I received my products for my brother. Thank you
@@ -336,7 +383,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -357,7 +405,7 @@
 
                 <div class="comment sort-coms" data-order="8" data-likes="12">
                     <a class="comment-user-img" href="#laurent.augay" target="_blank"><img src="images/12.jpg"
-                            width="48" height="48" alt="Augay Laurent" /></a>
+                            width="48" height="48" alt="Augay Laurent" loading="lazy" /></a>
                     <a href="#laurent.augay" target="_blank" class="comment-user-name"><span>Louis Dudley</span></a>
                     <p class="comment-text">I couldn't believe when I got the mail. They really sent me their gift card
                         to use it on for their products</p>
@@ -369,7 +417,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -389,11 +438,11 @@
 
                 <div class="comment sort-coms" data-order="9" data-likes="3">
                     <a class="comment-user-img" href="#molly.creasey.5" target="_blank"><img src="images/13.jpg"
-                            width="48" height="48" alt="Molly Creasey" /></a>
+                            width="48" height="48" alt="Molly Creasey" loading="lazy" /></a>
                     <a href="#molly.creasey.5" target="_blank" class="comment-user-name"><span>Mary Meighan</span></a>
                     <p class="comment-text">I've been a loyal reviewer for this program for years! I got so many
                         products from them over the year.</p>
-                    <img class="fb-img" src="images/v8.jpg" width="210" />
+                    <img class="fb-img" src="images/v8.jpg" width="210" loading="lazy" />
                     <div class="comment-meta">
                         <button>Like</button><span> · </span>
                         <button>Reply</button><span> · </span>
@@ -404,7 +453,7 @@
 
                 <div class="comment sort-coms" data-order="10" data-likes="1">
                     <a class="comment-user-img" href="#clark.downs" target="_blank"><img src="images/14.jpg" width="48"
-                            height="48" alt="Clark Downs" /></a>
+                            height="48" alt="Clark Downs" loading="lazy" /></a>
                     <a href="#clark.downs" target="_blank" class="comment-user-name"><span>Archie Warren</span></a>
                     <p class="comment-text">I went through the entire process and I got disappointed for not being
                         qualified. It's unfortunate, but more luck next time! Good luck everybody! ✌️</p>
@@ -418,7 +467,7 @@
 
                 <div class="comment sort-coms" data-order="11" data-likes="1">
                     <a class="comment-user-img" href="#jessica.mollard.5" target="_blank"><img src="images/15.jpg"
-                            width="48" height="48" alt="Jessica Mollard" /></a>
+                            width="48" height="48" alt="Jessica Mollard" loading="lazy" /></a>
                     <a href="#jessica.mollard.5" target="_blank" class="comment-user-name"><span>Iva Clemons</span></a>
                     <p class="comment-text">No luck! Did it really work for anyone?</p>
                     <div class="comment-meta">
@@ -429,7 +478,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -447,7 +497,7 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#deborah.hedges.3" target="_blank"><img src="images/16.jpg"
-                                width="48" height="48" alt="Deborah Hedges" /></a>
+                                width="48" height="48" alt="Deborah Hedges" loading="lazy" /></a>
                         <a href="#deborah.hedges.3" target="_blank" class="comment-user-name"><span>Rosa
                                 Saldana</span></a>
                         <p class="comment-text">I wonder the same, but seems like it does. Can anyone else respond and
@@ -461,7 +511,7 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#katharina.osterndorf" target="_blank"><img
-                                src="images/17.jpg" width="48" height="48" alt="Katha Ina" /></a>
+                                src="images/17.jpg" width="48" height="48" alt="Katha Ina" loading="lazy" /></a>
                         <a href="#katharina.osterndorf" target="_blank" class="comment-user-name"><span>Denise
                                 Hoffmann</span></a>
                         <p class="comment-text">Yes! I received mine and already tried it... Top products!</p>
@@ -474,7 +524,7 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#tony.prassos" target="_blank"><img src="images/18.jpg"
-                                width="48" height="48" alt="Tony Prassos" /></a>
+                                width="48" height="48" alt="Tony Prassos" loading="lazy" /></a>
                         <a href="#tony.prassos" target="_blank" class="comment-user-name"><span>Samuel
                                 Hamilton</span></a>
                         <p class="comment-text">It is real if you are eligible. Go through the necessary steps and
@@ -490,7 +540,7 @@
 
                 <div class="comment sort-coms" data-order="12" data-likes="20">
                     <a class="comment-user-img" href="#profile.php?id=100010027066906" target="_blank"><img
-                            src="images/19.jpg" width="48" height="48" alt="Roger Pelchat" /></a>
+                            src="images/19.jpg" width="48" height="48" alt="Roger Pelchat" loading="lazy" /></a>
                     <a href="#profile.php?id=100010027066906" target="_blank" class="comment-user-name"><span>Harold
                             Pickle</span></a>
                     <p class="comment-text">Thank you for doing this!</p>
@@ -502,7 +552,8 @@
                     </div>
                     <div class="comment">
                         <a class="comment-user-img" href="#Shopper's Help Program/" target="_blank"><img
-                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program" /></a>
+                                src="images/brand.jpg" width="48" height="48" alt="Shopper's Help Program"
+                                loading="lazy" /></a>
                         <a href="#Shopper's Help Program/" target="_blank" class="comment-user-name"><span>Shopper's
                                 Help Program</span> <svg fill="#3b82f6" aria-hidden="true" focusable="false" role="img"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -522,7 +573,7 @@
 
                 <div class="comment sort-coms" data-order="13" data-likes="6">
                     <a class="comment-user-img" href="#RicMcCabe" target="_blank"><img src="images/20.jpg" width="48"
-                            height="48" alt="Ric McCabe" /></a>
+                            height="48" alt="Ric McCabe" loading="lazy" /></a>
                     <a href="#RicMcCabe" target="_blank" class="comment-user-name"><span>Michael Talarico</span></a>
                     <p class="comment-text">I am not usually getting anything out of these types of contests, but I
                         guess I was in luck. Much appreciated!</p>
@@ -567,7 +618,7 @@
         <a href="#">Contact</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script-optimized.js" defer></script>
     <script>
         // 当页面加载完成时，立即向history栈添加一个状态
         history.pushState(null, null, location.href);
