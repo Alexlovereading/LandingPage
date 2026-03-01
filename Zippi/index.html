@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zippi Sweeper - The Smart Way to Keep Your Home Clean</title>
+  <meta name="description"
+    content="The Zippi Sweeper effortlessly captures crumbs, dust, and pet hair without the hassle of a full vacuum. Shop now with 60% Off!">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .page-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      padding-bottom: 140px;
+    }
+
+    /* ── VIDEO HERO ── */
+    .video-hero {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/7;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .video-hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Overlays */
+    .overlay-badge {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
+      padding: 40px 16px 14px;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    }
+
+    .discount-tag {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    .star-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 1px;
+    }
+
+    .stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #fbbf24;
+    }
+
+    .rating-num {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      padding: 22px 18px 24px;
+    }
+
+    .section-title {
+      font-size: clamp(17px, 4.8vw, 21px);
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 14px;
+      line-height: 1.3;
+      padding-left: 12px;
+      border-left: 4px solid #275edd;
+    }
+
+    .body-text {
+      font-size: clamp(13px, 3.6vw, 15px);
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .highlight-box {
+      background: #f0f5ff;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      font-size: clamp(13px, 3.6vw, 14px);
+      color: #275edd;
+      font-weight: 600;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: clamp(13px, 3.6vw, 14px);
+      color: #333;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .feature-list li .icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    /* ── CTA BUTTON ── */
+    .cta-wrap {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      background: #fff;
+      border-top: 1px solid #eee;
+      z-index: 100;
+    }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: #275edd;
+      color: #fff;
+      font-size: clamp(13px, 3.8vw, 16px);
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 16px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+      transition: background .2s;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background: #1a4fc4;
+    }
+
+    .cta-btn:active {
+      background: #1340a8;
+    }
+
+    .cta-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── TRUST BADGES ── */
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(8px, 2.5vw, 20px);
+      margin-top: 8px;
+      flex-wrap: nowrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: clamp(10px, 2.8vw, 12px);
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .trust-item svg {
+      width: 14px;
+      height: 14px;
+      fill: #16a34a;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 561px) {
+      .page-wrap {
+        margin: 24px auto;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, .1);
+        padding-bottom: 0;
+      }
+
+      .cta-wrap {
+        position: sticky;
+        left: auto;
+        right: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrap">
+
+    <!-- VIDEO HERO -->
+    <div class="video-hero">
+      <video src="zippi_sweeper.mp4" autoplay muted loop playsinline preload="auto" poster=""></video>
+
+      <div class="overlay-badge">
+        <div class="product-name">Zippi Sweeper</div>
+        <div class="discount-tag">60% Off</div>
+        <div class="star-row">
+          <span class="stars">
+            <!-- 5 filled stars -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <svg viewBox="0 0 24 24">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </span>
+          <span class="rating-num">5.0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+      <h1 class="section-title">What We Love About Zippi Sweeper</h1>
+
+      <p class="body-text">Daily spills, pet hair, and tracked-in dirt pile up fast — but hauling out a heavy vacuum for
+        every small mess just isn't realistic.</p>
+
+      <p class="body-text">The Zippi Sweeper fills that gap: lightweight, cordless, and ready in seconds to glide across
+        any floor and pick up crumbs, dust, and pet hair effortlessly.</p>
+
+      <div class="highlight-box">
+        <p>“The quickest way to a cleaner home — no plug, no hassle, no excuses.”</p>
+      </div>
+
+      <ul class="feature-list">
+        <li><span class="icon">🍳</span> Kitchen clean-ups after meals in seconds</li>
+        <li><span class="icon">🐾</span> Tackles pet hair quickly between deep cleans</li>
+        <li><span class="icon">👋</span> Swift tidy before unexpected guests arrive</li>
+        <li><span class="icon">✨</span> Consistently cleaner home with minimal effort</li>
+      </ul>
+    </div>
+
+    <!-- STICKY CTA -->
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://gotopsale.com/Zippi_Sweeper" target="_blank"
+        onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);"
+        rel="noopener noreferrer">
+        <svg viewBox="0 0 1152 1024" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1103.982 128h-845.422l-16.658-88.846c-4.258-22.702-24.080-39.154-47.178-39.154h-170.724c-13.254 0-24 10.746-24 24v16c0 13.254 10.746 24 24 24h157.44l139.854 745.892c-20.684 22.736-33.294 52.948-33.294 86.108 0 70.692 57.308 128 128 128s128-57.308 128-128c0-23.519-6.375-45.549-17.491-64.456l0.325 0.597h290.334c-10.791 18.31-17.166 40.34-17.166 63.859 0 70.692 57.308 128 128 128s128-57.308 128-128c0-35.986-14.87-68.48-38.776-91.736-5.182-20.482-23.706-36.264-46.57-36.264h-592.096l-24-128h662.762c22.736 0 42.354-15.952 46.992-38.21l86.662-416c6.208-29.808-16.546-57.79-46.994-57.79zM480 896c0 35.29-28.71 64-64 64s-64-28.71-64-64 28.71-64 64-64 64 28.71 64 64zM928 960c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z" />
+        </svg>
+        $79.99 Shop Zippi Sweeper Now &gt;&gt;
+      </a>
+      <div class="trust-row">
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+          </svg>
+          30-Day Money Back
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+          </svg>
+          Free Shipping
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+          </svg>
+          Secure Checkout
+        </span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    history.pushState(null, null, location.href);
+    window.onpopstate = function (event) {
+      location.href = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/';
+    }
+  </script>
+
+</body>
+
+</html>
