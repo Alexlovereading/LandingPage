@@ -262,7 +262,9 @@
 
     <!-- VIDEO HERO -->
     <div class="video-hero">
-      <video src="zippi_sweeper.mp4" autoplay muted loop playsinline preload="auto" poster=""></video>
+      <video id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="metadata">
+        <source src="zippi_sweeper.mp4" type="video/mp4">
+      </video>
 
       <div class="overlay-badge">
         <div class="product-name">Zippi Sweeper</div>
@@ -352,7 +354,47 @@
     history.pushState(null, null, location.href);
     window.onpopstate = function (event) {
       location.href = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/';
-    }
+    };
+
+    // ── 视频自动播放兜底 ──
+    (function () {
+      var video = document.getElementById('hero-video');
+      if (!video) return;
+
+      function tryPlay() {
+        var p = video.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            // autoplay 被浏览器拦截，等待用户首次交互后重试
+            function onInteract() {
+              video.play().catch(function () { });
+              document.removeEventListener('touchstart', onInteract);
+              document.removeEventListener('click', onInteract);
+              document.removeEventListener('scroll', onInteract);
+            }
+            document.addEventListener('touchstart', onInteract, { once: true, passive: true });
+            document.addEventListener('click', onInteract, { once: true });
+            document.addEventListener('scroll', onInteract, { once: true, passive: true });
+          });
+        }
+      }
+
+      // 使用 IntersectionObserver：离屏暂停、入屏恢复播放，节省资源
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              tryPlay();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        observer.observe(video);
+      } else {
+        tryPlay();
+      }
+    })();
   </script>
 
 </body>
