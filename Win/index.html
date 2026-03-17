@@ -5,19 +5,23 @@
     <title>Congratulations!</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes">
     <link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="landers/pick-a-prize/assets/app.css" type="text/css" rel="stylesheet" />
-    <script src="../_worker.js"></script>
+    <script src="../_worker.js" async></script>
 </head>
 
 <body class="theme--default">
 
     <main id="app" v-cloak>
         <div class="header">
-            <img class="header__menu" src="landers/pick-a-prize/assets/img/menu.svg" alt="Menu">
-            <img class="header__logo" src="landers/pick-a-prize/assets/img/logo/default.svg" alt="Image" />
-            <img class="header__account" src="landers/pick-a-prize/assets/img/account.svg" alt="Account">
+            <img class="header__menu" src="landers/pick-a-prize/assets/img/menu.svg" alt="Menu" loading="lazy"
+                decoding="async">
+            <img class="header__logo" src="landers/pick-a-prize/assets/img/logo/default.svg" alt="Image" loading="lazy"
+                decoding="async" />
+            <img class="header__account" src="landers/pick-a-prize/assets/img/account.svg" alt="Account" loading="lazy"
+                decoding="async">
         </div>
         <div class="content">
             <div v-if="!showPrize">
@@ -34,33 +38,40 @@
                     :disabled="!!selected" class="prize-picker" v-on:selected="receiveSelected">
                     <template v-slot:prize1>
                         <img v-show="!selected" key="1" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="">
+                            class="prize-picker__image prize-picker__image--placeholder" alt="" loading="lazy"
+                            decoding="async">
                         <img v-show="selected === 1" key="2" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
-                            class="prize-picker__image" alt="/€2,500.00 Cash" />
+                            class="prize-picker__image" alt="/€2,500.00 Cash" loading="lazy" decoding="async" />
                         <img v-show="selected && selected !== 1" key="3" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash"
+                            loading="lazy" decoding="async" />
                     </template>
                     <template v-slot:prize2>
                         <img v-show="!selected" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="">
+                            class="prize-picker__image prize-picker__image--placeholder" alt="" loading="lazy"
+                            decoding="async">
                         <img v-show="selected === 2" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
-                            class="prize-picker__image" alt="/€2,500.00 Cash" alt="" />
+                            class="prize-picker__image" alt="/€2,500.00 Cash" loading="lazy" decoding="async" alt="" />
                         <img v-show="selected && selected !== 2" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash"
+                            loading="lazy" decoding="async" />
                     </template>
                     <template v-slot:prize3>
                         <img v-show="!selected" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="" />
+                            class="prize-picker__image prize-picker__image--placeholder" alt="" loading="lazy"
+                            decoding="async" />
                         <img v-show="selected === 3" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
-                            class="prize-picker__image" alt="/€2,500.00 Cash" alt="" />
+                            class="prize-picker__image" alt="/€2,500.00 Cash" loading="lazy" decoding="async" alt="" />
                         <img v-show="selected && selected !== 3" src="landers/pick-a-prize/assets/img/chest.jpg"
-                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash"
+                            loading="lazy" decoding="async" />
                     </template>
                 </prize-picker>
             </div>
             <div class="prize" v-else>
                 <h2 class="title title--h2">You Won:</h2>
-                <img class="prize__image" src="img/prizes/cash-2500-usd/nl/default@0.5x.png" alt="">
+                <img class="prize__image" src="img/prizes/cash-2500-usd/nl/default@0.5x.png" alt="" loading="lazy"
+                    decoding="async">
                 <div class="prize__name">
                     💵 USD 1,000$ 💵
                 </div>
@@ -73,39 +84,41 @@
                 </p>
                 <a href="https://now.gotopsale.com/click" class="prize__button" target="_blank"
                     onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);"
-                    style="padding:0px;margin:0;border:0px;">Start
+                    style="margin:0;border:0px;">Start
                     immediately ➡️</a>
             </div>
             <div class="testimonials">
                 <h2 class="testimonials__title">Hall of Fame</h2>
-                <prize-comment avatar="img/profiles/latin/female/3@0.25x.jpg" name="Alba Jiménez"
+                <prize-comment avatar="img/profiles/latin/female/3@0.25x.jpg" name="Alba Jiménez" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -1 })} ${DateHelper().getDate({ days: -1 })}, ${DateHelper().getYear({ days: -1 })}`"
                     message="I received it today, i'm so happy!"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/male/3@0.25x.jpg" name="David Navarro"
+                <prize-comment avatar="img/profiles/latin/male/3@0.25x.jpg" name="David Navarro" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`"
                     message="No prize for me... can I have another chance?"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/male/10@0.25x.jpg" name="Hugo García"
+                <prize-comment avatar="img/profiles/latin/male/10@0.25x.jpg" name="Hugo García" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`"
                     message="I won!! Thanks!"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/female/6@0.25x.jpg" name="Paula Moreno"
+                <prize-comment avatar="img/profiles/latin/female/6@0.25x.jpg" name="Paula Moreno" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -3 })} ${DateHelper().getDate({ days: -3 })}, ${DateHelper().getYear({ days: -3 })}`"
                     message="I won! Wooooooo"></prize-comment>
                 <prize-comment avatar="img/profiles/latin/male/9@0.25x.jpg" name="Santiago Fernández"
+                    avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`"
                     message="This is amazing I can't wait to play!"></prize-comment>
                 <prize-comment avatar="img/profiles/latin/female/5@0.25x.jpg" name="Daniela Alonso"
+                    avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`"
                     message="Call me a sore loser, because I really wanted it!"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/female/1@0.25x.jpg" name="Noa García"
+                <prize-comment avatar="img/profiles/latin/female/1@0.25x.jpg" name="Noa García" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -6 })} ${DateHelper().getDate({ days: -6 })}, ${DateHelper().getYear({ days: -6 })}`"
                     message="That was so easy, I won!!!!"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/male/2@0.25x.jpg" name="Martín Moreno"
+                <prize-comment avatar="img/profiles/latin/male/2@0.25x.jpg" name="Martín Moreno" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -7 })} ${DateHelper().getDate({ days: -7 })}, ${DateHelper().getYear({ days: -7 })}`"
                     message="I've never won anything, but I hope I'm lucky!"></prize-comment>
-                <prize-comment avatar="img/profiles/latin/male/6@0.25x.jpg" name="Nicolas López"
+                <prize-comment avatar="img/profiles/latin/male/6@0.25x.jpg" name="Nicolas López" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -8 })} ${DateHelper().getDate({ days: -8 })}, ${DateHelper().getYear({ days: -8 })}`"
                     message="The gift wasn't received until the next day, but it's real."></prize-comment>
-                <prize-comment avatar="img/profiles/latin/male/8@0.25x.jpg" name="Juan González"
+                <prize-comment avatar="img/profiles/latin/male/8@0.25x.jpg" name="Juan González" avatar-loading="lazy"
                     :date="`${DateHelper().getMonthName({ days: -9 })} ${DateHelper().getDate({ days: -9 })}, ${DateHelper().getYear({ days: -9 })}`"
                     message="Both my wife and I won the prize, which is really nice, haha!"></prize-comment>
             </div>
@@ -162,7 +175,7 @@
             // history.go(-1);
         }
     </script>
-    <script type="application/javascript" src="landers/pick-a-prize/assets/app.js"></script>
+    <script type="application/javascript" src="landers/pick-a-prize/assets/app.js" defer></script>
 </body>
 
 </html>

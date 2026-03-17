@@ -55,6 +55,7 @@
     .prize-picker[data-v-a1462725] {
         flex-direction: column
     }
+
     .prize-picker__option[data-v-a1462725] {
         margin-bottom: 20px
     }
@@ -191,10 +192,10 @@ body {
 }
 
 .paragraph {
-    margin: 0 0 3px;
-    color: #757575;
+    margin: 0 0 12px;
+    color: #404040;
     font-size: 16px;
-    line-height: 24px
+    line-height: 30px
 }
 
 .header {
@@ -285,14 +286,14 @@ body {
 .prize__name {
     margin-bottom: 20px;
     font-weight: 700;
-    font-size: 16px
+    font-size: 18px
 }
 
 .prize__button {
     display: inline-block;
     height: 48px;
     margin-top: 15px;
-    padding: 0 24px;
+    padding: 0 48px;
     color: #fff;
     font-weight: 700;
     font-size: 16px;
@@ -303,10 +304,22 @@ body {
     text-transform: uppercase;
     text-decoration: none;
     background: #1a73e8;
-    border-bottom: 3px solid rgba(0, 0, 0, .3);
+    border: none;
     border-radius: 5px;
     box-shadow: 0 2px 3px #00000036;
-    cursor: pointer
+    cursor: pointer;
+    transition: all 0.2s ease
+}
+
+.prize__button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.5)
+}
+
+.prize__button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 4px rgba(26, 115, 232, 0.3)
+}
 }
 
 .testimonials {
@@ -367,19 +380,23 @@ body {
     0% {
         transform: rotate(0)
     }
+
     to {
         transform: rotate(360deg)
     }
 }
 
 @keyframes quick-wobble {
+
     0%,
     89% {
         transform: scale(1)
     }
+
     90% {
         transform: scale(1.04)
     }
+
     to {
         transform: scale(1)
     }
@@ -389,9 +406,11 @@ body {
     0% {
         transform: scaleY(1) scaleX(1)
     }
+
     50% {
         transform: scaleY(1.05) scaleX(.97)
     }
+
     to {
         transform: scaleY(1) scaleX(1)
     }
@@ -401,21 +420,26 @@ body {
     .content {
         padding: 0 10px
     }
+
     .title--h1 {
         font-size: 24px
     }
+
     .prize-picker {
         flex-direction: row !important;
         margin: 10px 0 0
     }
+
     .paragraph {
         font-size: 13px;
         line-height: 18px
     }
+
     .prize-picker__option {
         margin: 10px 5px !important;
         padding: 6px !important
     }
+
     .prize-picker__button {
         height: 33px;
         padding: 0 4px !important;
@@ -424,9 +448,15 @@ body {
         line-height: 33px;
         text-overflow: ellipsis
     }
+
     .testimonials {
         margin-top: 10px
     }
+
+    .prize__button {
+        margin-bottom: 20px
+    }
+
     .prize__button {
         margin-bottom: 20px
     }
@@ -519,34 +549,7 @@ body {
     box-shadow: 0 2px 3px #00000036;
 }
 
-.prize__button {
-    display: inline-block;
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #0cb1c3;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    /* Add your existing button styles here */
-    animation: pulse 2s infinite;
-}
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 .btn:not(:disabled):not(.disabled) {
     cursor: pointer;

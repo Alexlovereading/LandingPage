@@ -1,0 +1,63 @@
+# 启用 Gzip 压缩
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+  application/json
+</IfModule>
+
+# 设置缓存控制头
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # 图像文件 - 30 天
+  ExpiresByType image/jpg "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+
+  # CSS 和 JavaScript - 7 天
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+
+  # HTML - 1 小时（经常变化）
+  ExpiresByType text/html "access plus 1 hour"
+
+  # 字体文件 - 1 年
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType application/x-font-woff2 "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # 默认 - 1 周
+  ExpiresDefault "access plus 1 week"
+</IfModule>
+
+# 为静态资源添加 ETag
+<IfModule mod_headers.c>
+  Header unset ETag
+  FileETag None
+
+  # 为图像添加缓存验证
+  <FilesMatch "\.(?:png|jpg|jpeg|gif|webp)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+  </FilesMatch>
+
+  # 为 CSS/JS 添加缓存验证
+  <FilesMatch "\.(?:css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # HTML 应该更频繁地重新验证
+  <FilesMatch "\.html?$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# 启用 MIME 类型检测
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
