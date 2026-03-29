@@ -10,17 +10,13 @@
     <!-- Preconnect to critical third-party origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="//code.jquery.com">
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//ipapi.co">
 
     <title>Relieve Neuropathy at Home</title>
 
-    <!-- Critical CSS: Bootstrap needed for layout rendering -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Critical CSS: Bootstrap self-hosted for faster render -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Local critical CSS -->
     <link rel="stylesheet" href="css/emsense-v4-main.css">
@@ -41,19 +37,14 @@
 
     <!-- Google Fonts: reduced weights + async load -->
     <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Poppins:wght@400;600;700&family=Bitter:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Poppins:wght@400;600&family=Bitter:wght@400;600;700&family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Poppins:wght@400;600;700&family=Bitter:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@400;600;700&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Poppins:wght@400;600&family=Bitter:wght@400;600;700&family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap">
     </noscript>
 
-    <!-- Deferred scripts: preserve load order with defer -->
-    <script defer
-        src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=fetch,Promise,CustomEvent"></script>
-    <script defer src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS not needed: no modals/dropdowns/carousels used -->
 
     <!-- Geo-targeting script: deferred, uses DOMContentLoaded internally -->
     <script defer>
@@ -87,6 +78,123 @@
             }).catch(function () { });
         });
     </script>
+    <style>
+        /* ── Elderly-friendly typography fixes ─────────────────────────────
+           Target: US seniors (60+). Principles:
+           • Min body text 18px • Line-height ≥ 1.65 for body, ≥ 1.35 for headings
+           • No sub-13px text anywhere • Remove non-standard font-weight: 450
+        ─────────────────────────────────────────────────────────────────── */
+
+        /* 1. Fix critically tight heading line-heights (was ~1.04 ratio) */
+        #itksswy,
+        #i5sihc,
+        #cc-id-tUFK9E1hWHo7,
+        #cc-id-7sJK9YnOZgfi,
+        #cc-id-yvRUZQpDB7qd,
+        #cc-id-MVjB74x9W8ru,
+        #cc-id-J0TkJtWE0lu0,
+        #ixmmzzo {
+            line-height: 1.4 !important;
+        }
+
+        /* 2. Sub-headings: tighten was still cramped at 31.2px / 24-25px */
+        #ikqqjsh,
+        #cc-id-CD80XZ3eXphA,
+        #cc-id-4766VJLHRuDw,
+        #cc-id-Eh03zM2Tb8jr,
+        #ira3zeb,
+        #ivfs7cy {
+            line-height: 1.45 !important;
+        }
+
+        /* 3. Improve main body paragraph line-height (20px → 1.75 ratio = 35px) */
+        #cc-id-ASKCcEx7Klw3,
+        #cc-id-Oh1MW2aFlH8e,
+        #cc-id-tGUN1ZootH6a,
+        #cc-id-Yev87gre1wCt,
+        #cc-id-tSh4Ox0XjtK7,
+        #cc-id-57rdZ4gO4k1K,
+        #cc-id-JaSAeAp9Epei,
+        #cc-id-YFuMZnKUkOBZ,
+        #cc-id-nTi4nEgxRjDS,
+        #cc-id-iDikHciLqBRC,
+        #i2700n,
+        #i0lyhj,
+        #ihljs5,
+        #ix5ahng,
+        #iv65mih,
+        #ij7wm4d,
+        #iwlhn3e,
+        #iy5jp7g,
+        #is1kux9,
+        #irlvtap,
+        #i4g8aqz,
+        #ipffep3,
+        #i66uxi,
+        #i8ff2tf,
+        #ib2utbf,
+        #i4r5frh,
+        #iyor6k1,
+        #i955kux {
+            line-height: 1.75 !important;
+        }
+
+        /* 4. Bump 16px sidebar body text → 18px for seniors */
+        #iqtncf,
+        #i8awej,
+        #iuhrmg,
+        #iclwxe,
+        #imw8gk,
+        #i2ql0k,
+        #i0skt2,
+        #i2qfdo {
+            font-size: 18px !important;
+            line-height: 1.65 !important;
+        }
+
+        /* 5. Fix 11px author meta — was unreadable */
+        #i2h98 {
+            font-size: 14px !important;
+            line-height: 1.5 !important;
+        }
+
+        /* 6. Fix 12px date / views line */
+        #io9yv {
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* 7. Fix 13px disclaimer / "individual results" text → 15px */
+        #i001c9,
+        #ieujzj,
+        #ipo1su {
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* 8. Fix footer disclaimer / copyright lines */
+        #io71cg,
+        #i3yylij {
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* 9. Fix #ivmko nav breadcrumb: line-height was 16px at 16px (ratio 1.0!) */
+        #ivmko {
+            font-size: 14px !important;
+            line-height: 1.5 !important;
+        }
+
+        /* 10. Remove non-standard font-weight: 450 → use 400 */
+        #i8x6o9 {
+            font-weight: 400 !important;
+        }
+
+        /* 11. Inline disclaimer "INTERNET ONLY" bump */
+        #i53lhn {
+            line-height: 1.6 !important;
+        }
+    </style>
 </head>
 
 <body class="dom-pending">
@@ -144,7 +252,7 @@
                                         class="icp icp-auto far fa-calendar-alt"> </em></div>
                                 <div id="cc-id-jXb7MdPElCNp">
                                     <div id="io9yv" data-text="text">Mon. January. 5th, 2026 | 11:11 am EST - <em
-                                            id="ig3wl" data-text="text" data-highlightable="1">287.391 👁 / Advertorial
+                                            id="ig3wl" data-text="text" data-highlightable="1">287.391 👁
                                         </em></div>
                                 </div>
                             </div>
@@ -168,9 +276,9 @@
                     </div>
                 </div>
                 <div id="ikbaheg" data-box="true">
-                    <div id="iakke"><video preload="metadata" autoplay="autoplay" muted="" loop="loop" playsinline=""
+                    <div id="iakke"><video preload="auto" autoplay="autoplay" muted="" loop="loop" playsinline=""
                             webkit-playsinline="" src="videos/emsense-v4-video1.mp4" class="fk-ibuf9gb" id="ibuf9gb"
-                            data-src="">
+                            fetchpriority="high" data-src="">
                         </video></div>
                 </div>
                 <div id="ih8f78" style="text-align: center;" data-box="true">
@@ -395,7 +503,8 @@
                                 <div class="rte-styled-text"> </div>
                                 <div class="rte-styled-text">
                                     <p data-end="1293" data-start="1198"><strong data-end="1291" data-start="1198">And
-                                            if you’re in America, the problem isn’t waiting lists — it’s massive out-of-pocket bills.</strong></p>
+                                            if you’re in America, the problem isn’t waiting lists — it’s massive
+                                            out-of-pocket bills.</strong></p>
                                     <p data-end="1414" data-start="1300">Without adequate insurance, neuropathy is
                                         rarely covered as
                                         urgent unless there’s immediate risk of infection or amputation.</p>
@@ -524,7 +633,7 @@
                     <div id="cc-id-MVjB74x9W8ru" data-text="text">WHEN YOU MESS WITH $82 BILLION, THEY COME FOR YOU
                     </div>
                     <img id="fkt-image-dfd-da1-948" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-hero.jpg" alt="EMSense device" width="900" height="507" align="center"
+                        src="images/emsense-v4-hero.webp" alt="EMSense device" width="900" height="507" align="center"
                         loading="lazy">
                     <div id="cc-id-tSh4Ox0XjtK7" data-text="text">First, it was "friendly" warnings.
                         <div class="rte-styled-text"> </div>
@@ -669,7 +778,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-2a1-db1-be6" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-product1.jpg" alt="EMSense product" width="800" height="533"
+                        src="images/emsense-v4-product1.webp" alt="EMSense product" width="800" height="533"
                         align="center" loading="lazy">
                     <div id="i955kux" data-text="text">As soon as your feet are wrapped in the EMSense device, the
                         therapeutic process begins:
@@ -737,7 +846,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-61c-681-871" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-product2.jpg" alt="EMSense product" width="900" height="507"
+                        src="images/emsense-v4-product2.webp" alt="EMSense product" width="900" height="507"
                         align="center" loading="lazy">
                     <div id="iv65mih" data-text="text">
                         <div class="rte-styled-text">
@@ -800,7 +909,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-c79-083-941" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-product3.jpg" alt="EMSense product" width="900" height="507"
+                        src="images/emsense-v4-product3.webp" alt="EMSense product" width="900" height="507"
                         align="center" loading="lazy">
                     <div id="ix5ahng" data-text="text">
                         <div class="rte-styled-text">Here’s what neuropathy really costs Americans:</div>
@@ -817,7 +926,8 @@
                                     data-end="2323" data-start="2268">high cost in time, progression, and quality of
                                     life.</strong></p>
                             <p data-end="2352" data-start="2332"><strong data-end="2350" data-start="2332">But many
-                                    Americans end up paying out of pocket simply because their insurance won’t cover it.</strong>
+                                    Americans end up paying out of pocket simply because their insurance won’t cover
+                                    it.</strong>
                             </p>
                             <p data-end="2352" data-start="2332"><strong data-end="2350" data-start="2332">Private
                                     route</strong><strong data-text="text">: </strong></p>
@@ -906,7 +1016,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-0cf-185-957" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-daily1.jpg" alt="" width="100%" height="552" align="center"
+                        src="images/emsense-v4-daily1.webp" alt="" width="100%" height="552" align="center"
                         loading="lazy"><br>
                     <div id="cc-id-57rdZ4gO4k1K" data-text="text">Remember those cease and desist letters I mentioned?
                         <div class="rte-styled-text"> </div>
@@ -962,7 +1072,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-011-e86-ab2" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-daily2.jpg" alt="" width="100%" height="800" align="center"
+                        src="images/emsense-v4-daily2.webp" alt="" width="100%" height="800" align="center"
                         loading="lazy"><br>
                     <div id="cc-id-JaSAeAp9Epei" data-text="text">This 50% discount dies in 72 hours.
                         <div class="rte-styled-text"> </div>
@@ -1101,7 +1211,7 @@
                         </div>
                     </div>
                     <img id="fkt-image-d0b-fa8-b86" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-daily3.jpg" alt="" width="100%" height="800" align="center"
+                        src="images/emsense-v4-daily3.webp" alt="" width="100%" height="800" align="center"
                         loading="lazy"><br>
                     <div id="cc-id-nTi4nEgxRjDS" data-text="text">Right now, you're at a crossroads.
                         <div class="rte-styled-text"> </div>
@@ -1208,7 +1318,7 @@
                             target="_blank" rel="noopener" data-id="fkt-button-912-b8e-a05" data-minutesdelay="">CHECK
                             AVAILABILITY NOW</a></div>
                     <img id="fkt-image-d0b-fa8-b86" class="fk-image-defaults disable-fk-lazy" title=""
-                        src="images/emsense-v4-benefit1.jpg" alt="" width="800" height="800" align="center"
+                        src="images/emsense-v4-benefit1.webp" alt="" width="800" height="800" align="center"
                         loading="lazy"> <a id="fkt-link-596-eb3-a25" title="Get an Exclusive Discount..."
                         href="https://now.gotopsale.com/click"
                         onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);"
@@ -1228,7 +1338,7 @@
                     <div id="i9hb97" data-box="true">
                         <div id="iny84d" data-text="text">INTERNET ONLY OFFER!</div>
                         <img id="fkt-image-0f0-6b9-897" class="fk-image-defaults disable-fk-lazy" title=""
-                            src="images/emsense-v4-benefit2.jpg" alt="" width="500" height="403" align="center"
+                            src="images/emsense-v4-benefit2.webp" alt="" width="500" height="403" align="center"
                             loading="lazy">
                         <div id="io0abh" data-text="text">FOR A LIMITED TIME:
                             <div id="cc-id-9aKQOBEhoX6W" data-text="text"></div>
@@ -1306,7 +1416,7 @@
                                         <ul id="fbcommentslist">
                                             <li id="ipawwp"><img id="fkt-image-96f-e8c-b20"
                                                     class="profilepic fk-disable-lazy disable-fk-lazy" title=""
-                                                    src="images/emsense-v4-testimonial.jpg" alt="" width="50"
+                                                    src="images/emsense-v4-testimonial.webp" alt="" width="50"
                                                     height="50" align="middle" loading="lazy">
                                                 <div id="i5h36i">
                                                     <h3 id="iz8bvl" data-text="text">Wilma Becker</h3>
@@ -1451,7 +1561,7 @@
                                                     <p id="cc-id-KNEjqZXW5eUn" data-text="text"></p>
                                                     <img id="fkt-image-971-fb3-9e1"
                                                         class="fk-disable-lazy disable-fk-lazy" title=""
-                                                        src="images/emsense-v4-ugc12.jpg" alt="" width="800"
+                                                        src="images/emsense-v4-ugc12.webp" alt="" width="800"
                                                         height="200" align="middle" loading="lazy">
                                                     <div id="cc-id-pnVii1jKtvAa" class="fbbuttons">
                                                         <p id="irjm92i"><span id="cc-id-kIGVJlBEA6ju" class="like blue"
@@ -1942,7 +2052,7 @@
                                                         tonight for the first time. Fingers crossed!</p>
                                                     <img id="fkt-image-e6e-996-8d4"
                                                         class="fk-disable-lazy disable-fk-lazy" title=""
-                                                        src="images/emsense-v4-ext-ugc1.jpg" alt="" width="600"
+                                                        src="images/emsense-v4-ext-ugc1.webp" alt="" width="600"
                                                         height="200" align="middle" loading="lazy">
                                                     <div id="cc-id-JGrBB9f4Rwju" class="fbbuttons">
                                                         <p id="i1f0nd"><span id="cc-id-OTRCJUXet38H" class="like blue"
@@ -1975,7 +2085,7 @@
                         <div id="iqtncf" data-text="text">A revolutionary device is making headlines for restoring 99.8%
                             of nerve function in just 15 minutes — without surgery, drugs, or therapy visits.</div>
                         <img id="fkt-image-bb8-0a5-88d" class="fk-image-defaults fk-disable-lazy disable-fk-lazy"
-                            title="" src="images/emsense-v4-ext-cdn1.jpg" alt="" width="100%" height="403"
+                            title="" src="images/emsense-v4-ext-cdn1.webp" alt="" width="100%" height="403"
                             align="center" loading="lazy">
                     </div>
                     <div id="i20cl2" data-box="true">
@@ -1983,7 +2093,7 @@
                             studied, experts finally created a surgery-free solution to eliminate burning foot pain —
                             all packed into one powerful at-home device.</div>
                         <img id="fkt-image-5de-19a-940" class="fk-image-defaults fk-disable-lazy disable-fk-lazy"
-                            title="" src="images/emsense-v4-ext-cdn2.jpg" alt="" width="100%" height="825"
+                            title="" src="images/emsense-v4-ext-cdn2.webp" alt="" width="100%" height="825"
                             align="center" loading="lazy">
                     </div>
                     <div id="ie7d56" data-box="true">
@@ -1997,7 +2107,7 @@
                                 50 have experienced <span id="iswn3ad" data-text="text">:</span></div>
                         </div>
                         <img id="fkt-image-14d-3bc-a5d" class="fk-image-defaults fk-disable-lazy disable-fk-lazy"
-                            title="" src="images/emsense-v4-ext-testimonial1.jpg" alt="" width="441" height="356"
+                            title="" src="images/emsense-v4-ext-testimonial1.webp" alt="" width="441" height="356"
                             align="center" loading="lazy">
                         <div id="i001c9" data-text="text">Individual results may vary*</div>
                         <div id="iclwxe" data-text="text"><strong id="iqn4aju" data-text="text"
@@ -2019,7 +2129,7 @@
                     </div>
                     <div id="iyzmil" data-box="true"><img id="fkt-image-5d4-582-833"
                             class="fk-image-defaults disable-fk-lazy" title=""
-                            src="images/emsense-v4-ext-testimonial2.jpg" alt="" width="441" height="356" align="center"
+                            src="images/emsense-v4-ext-testimonial2.webp" alt="" width="441" height="356" align="center"
                             loading="lazy">
                         <div id="ieujzj" data-text="text"><em id="cc-id-kbICWtwIjflo" data-text="text">Individual
                                 results may vary* </em></div>
@@ -2041,7 +2151,7 @@
                             more</a>
                     </div>
                     <div id="i3pxa9" data-box="true"><img id="fkt-image-57e-4b1-9dd"
-                            class="fk-image-defaults disable-fk-lazy" title="" src="images/emsense-v4-ext-cdn3.jpg"
+                            class="fk-image-defaults disable-fk-lazy" title="" src="images/emsense-v4-ext-cdn3.webp"
                             alt="" width="100%" align="center" loading="lazy"><br>
                         <div id="ipo1su" data-text="text"><em id="cc-id-QoF69ughidod" data-text="text">Individual
                                 results may vary* </em></div>
