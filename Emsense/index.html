@@ -46,6 +46,9 @@
 
     <!-- Bootstrap JS not needed: no modals/dropdowns/carousels used -->
 
+    <!-- Preload hero video poster for faster LCP on mobile -->
+    <link rel="preload" as="image" href="images/emsense-v4-video1-poster.webp" fetchpriority="high">
+
     <!-- Geo-targeting script: deferred, uses DOMContentLoaded internally -->
     <script defer>
         document.addEventListener("DOMContentLoaded", function () {
@@ -276,9 +279,9 @@
                     </div>
                 </div>
                 <div id="ikbaheg" data-box="true">
-                    <div id="iakke"><video preload="auto" autoplay="autoplay" muted="" loop="loop" playsinline=""
+                    <div id="iakke"><video preload="none" autoplay="autoplay" muted="" loop="loop" playsinline=""
                             webkit-playsinline="" src="videos/emsense-v4-video1.mp4" class="fk-ibuf9gb" id="ibuf9gb"
-                            fetchpriority="high" data-src="">
+                            poster="images/emsense-v4-video1-poster.webp" data-src="">
                         </video></div>
                 </div>
                 <div id="ih8f78" style="text-align: center;" data-box="true">
