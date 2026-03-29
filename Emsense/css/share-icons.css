@@ -1,0 +1,43 @@
+/* Share button icon styling */
+
+.elementor-share-btn__icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+.elementor-share-btn__icon svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+/* X/Twitter button: black background, white icon */
+
+.elementor-share-btn_x-twitter,
+.elementor-share-btn_twitter {
+    background-color: #000 !important;
+}
+
+.elementor-share-btn_x-twitter .elementor-share-btn__icon svg,
+.elementor-share-btn_twitter .elementor-share-btn__icon svg {
+    fill: white;
+}
+
+/* WhatsApp button: green background, white icon */
+
+.elementor-share-btn_whatsapp {
+    background-color: #25D366 !important;
+}
+
+.elementor-share-btn_whatsapp .elementor-share-btn__icon svg {
+    fill: white;
+}
+
+/* Hide font-based icons that don't load */
+
+.elementor-share-btn__icon i {
+    display: none !important;
+}
