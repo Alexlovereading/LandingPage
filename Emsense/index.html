@@ -15,24 +15,288 @@
 
     <title>Relieve Neuropathy at Home</title>
 
-    <!-- Critical CSS: Bootstrap self-hosted for faster render -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Critical inline CSS: Bootstrap utilities used on this page -->
+    <style>
+        /* Bootstrap critical classes only */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box
+        }
 
-    <!-- Local critical CSS -->
-    <link rel="stylesheet" href="css/emsense-v4-main.css">
-    <link rel="stylesheet" href="css/share-icons.css">
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+        }
 
-    <!-- Non-critical CSS: Load asynchronously to avoid render blocking -->
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-        onload="this.onload=null;this.rel='stylesheet'">
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden
+        }
+
+        .embed-responsive::before {
+            display: block;
+            content: ""
+        }
+
+        .embed-responsive .embed-responsive-item,
+        .embed-responsive iframe,
+        .embed-responsive embed,
+        .embed-responsive object,
+        .embed-responsive video {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        .embed-responsive-16by9::before {
+            padding-top: 56.25%
+        }
+
+        .clearfix::after {
+            display: block;
+            clear: both;
+            content: ""
+        }
+
+        .col {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%
+        }
+
+        .align-right {
+            text-align: right
+        }
+
+        .inline-block {
+            display: inline-block
+        }
+
+        .hidden {
+            display: none
+        }
+
+        /* FA icon inline replacements */
+        .icp {
+            display: inline-block;
+            font-style: normal;
+            line-height: 1;
+            vertical-align: -.125em
+        }
+
+        .icp svg {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            fill: currentColor
+        }
+    </style>
+
+    <!-- Bootstrap: async load for non-critical styles -->
+    <link rel="preload" as="style" href="css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </noscript>
 
-    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"
-        onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Local critical CSS: async load main CSS, inline only above-the-fold styles -->
+    <style>
+        /* Above-the-fold critical CSS extracted from emsense-v4-main.css */
+        img,
+        video,
+        iframe,
+        hr,
+        a,
+        button {
+            max-width: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            overflow-x: unset !important;
+            font-family: Poppins, sans-serif;
+        }
+
+        .fk-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: wrap;
+            padding: 10px;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .fk-col {
+            min-height: 25px;
+            padding: 10px;
+            flex-grow: 1;
+            width: min-content;
+            flex-basis: 100%;
+            display: block;
+        }
+
+        #imkmt8m {
+            margin-top: 0px;
+            padding-top: 0px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #333333 !important;
+            height: 30px;
+        }
+
+        #ibsz {
+            margin-top: 0px;
+            padding-top: 0px;
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(0, 70, 90) !important;
+        }
+
+        #ivjgwf {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-top: 0px;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(0, 70, 90) !important;
+        }
+
+        #ialx1 {
+            margin-top: 1px;
+            padding-top: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-family: Poppins, sans-serif;
+            font-size: 12px;
+            line-height: 28px;
+            width: auto;
+            padding-bottom: 50px;
+            border-width: 1px;
+            border-radius: 1px;
+            flex: 0 0 0%;
+            font-weight: 600;
+            background-color: rgb(243, 244, 246) !important;
+            color: rgb(69, 117, 132) !important;
+        }
+
+        #ibovqzm {
+            padding: 12px 0px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 20px;
+        }
+
+        #ibuf9gb {
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 1px;
+        }
+
+        #ikbaheg {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #iokvb {
+            padding: 1px;
+            font-size: 27px;
+            font-family: Bitter, sans-serif;
+            text-align: left;
+            font-weight: 700;
+            line-height: 36px;
+        }
+
+        #izp8b {
+            padding: 12px 15px;
+            width: 100%;
+            margin-bottom: 0px;
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .embed-responsive::before {
+            display: block;
+            content: "";
+        }
+
+        .embed-responsive .embed-responsive-item,
+        .embed-responsive video {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .embed-responsive-16by9::before {
+            padding-top: 56.25%;
+        }
+    </style>
+    <link rel="preload" as="style" href="css/emsense-v4-main.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+        <link rel="stylesheet" href="css/emsense-v4-main.css">
+    </noscript>
+    <link rel="preload" as="style" href="css/share-icons.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="css/share-icons.css">
     </noscript>
 
     <!-- Google Fonts: reduced weights + async load -->
@@ -49,9 +313,9 @@
     <!-- Preload hero video poster for faster LCP on mobile -->
     <link rel="preload" as="image" href="images/emsense-v4-video1-poster.webp" fetchpriority="high">
 
-    <!-- Geo-targeting script: deferred, uses DOMContentLoaded internally -->
-    <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
+    <!-- Geo-targeting: runs after page is interactive via requestIdleCallback -->
+    <script>
+        (function () {
             var defined = {
                 US: "Americans", CA: "Canadians", GB: "Brits", AU: "Australians",
                 NZ: "New Zealanders", DE: "Germans", IL: "Israelis", MX: "Mexicans",
@@ -65,21 +329,28 @@
                 RO: "Romanians", HU: "Hungarians", CL: "Chileans", CO: "Colombians",
                 AR: "Argentines", PE: "Peruvians"
             };
-            fetch("https://ipapi.co/json/").then(function (r) {
-                return r.json();
-            }).then(function (d) {
-                var cc = d.country_code || "";
-                var name = defined[cc] || "people";
-                if (name === "Americans") return;
-                var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-                while (walker.nextNode()) {
-                    var node = walker.currentNode;
-                    if (node.nodeValue.indexOf("Americans") !== -1) {
-                        node.nodeValue = node.nodeValue.replace(/Americans/g, name);
+            function runGeo() {
+                fetch("https://ipapi.co/json/").then(function (r) {
+                    return r.json();
+                }).then(function (d) {
+                    var cc = d.country_code || "";
+                    var name = defined[cc] || "people";
+                    if (name === "Americans") return;
+                    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+                    while (walker.nextNode()) {
+                        var node = walker.currentNode;
+                        if (node.nodeValue.indexOf("Americans") !== -1) {
+                            node.nodeValue = node.nodeValue.replace(/Americans/g, name);
+                        }
                     }
-                }
-            }).catch(function () { });
-        });
+                }).catch(function () { });
+            }
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(runGeo, { timeout: 3000 });
+            } else {
+                setTimeout(runGeo, 2000);
+            }
+        })();
     </script>
     <style>
         /* ── Elderly-friendly typography fixes ─────────────────────────────
@@ -235,8 +506,11 @@
                     <ul id="is7zm" class="fk-bullet">
                         <li id="ig0sv">
                             <div id="itn02" class="fk-bullet-list-container">
-                                <div id="ikb4g" class="fk-bullet-icon-container"><em id="i6lxi"
-                                        class="icp icp-auto fas fa-square-full"> </em></div>
+                                <div id="ikb4g" class="fk-bullet-icon-container"><span class="icp"><svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                                            <path
+                                                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                                        </svg></span></div>
                                 <div id="cc-id-tfl9k8yDotdD">
                                     <div id="ivmko" data-text="text">Home > Health> Nerve Health</div>
                                 </div>
@@ -251,8 +525,11 @@
                     <ul id="i2i9t" class="fk-bullet">
                         <li id="i68cd">
                             <div id="iq25m" class="fk-bullet-list-container">
-                                <div id="ia7mz" class="fk-bullet-icon-container"><em id="irx9y"
-                                        class="icp icp-auto far fa-calendar-alt"> </em></div>
+                                <div id="ia7mz" class="fk-bullet-icon-container"><span class="icp"><svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+                                            <path
+                                                d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16z" />
+                                        </svg></span></div>
                                 <div id="cc-id-jXb7MdPElCNp">
                                     <div id="io9yv" data-text="text">Mon. January. 5th, 2026 | 11:11 am EST - <em
                                             id="ig3wl" data-text="text" data-highlightable="1">287.391 👁
@@ -279,7 +556,7 @@
                     </div>
                 </div>
                 <div id="ikbaheg" data-box="true">
-                    <div id="iakke"><video preload="none" autoplay="autoplay" muted="" loop="loop" playsinline=""
+                    <div id="iakke"><video preload="metadata" autoplay="autoplay" muted="" loop="loop" playsinline=""
                             webkit-playsinline="" src="videos/emsense-v4-video1.mp4" class="fk-ibuf9gb" id="ibuf9gb"
                             poster="images/emsense-v4-video1-poster.webp" data-src="">
                         </video></div>
