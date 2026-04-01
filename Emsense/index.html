@@ -2521,37 +2521,27 @@
                     sticky.style.transition = 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out';
                     sticky.style.visibility = 'visible';
                 }, 100);
-                // Reduced delay for faster perceived load
-                const trigger = document.getElementById('cc-id-FXiygOsSPFH8');
-                if (!trigger) {
-                    console.warn("Trigger element with ID 'cc-id-FXiygOsSPFH8' not found.");
-                    return;
-                }
-                // Use IntersectionObserver for better performance over scroll events
-                const observerOptions = {
-                    root: null, // Viewport
-                    rootMargin: '0px',
-                    threshold: 0 // Detect any intersection change
-                };
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (!entry.isIntersecting && entry.boundingClientRect.bottom > 0) {
-                            // Trigger is below viewport: hide sticky
-                            sticky.style.transform = 'translateY(100%)';
-                            sticky.style.opacity = '0';
-                        } else {
-                            // Trigger is intersecting or above viewport: show sticky
+                // Show sticky button once "THE NIGHT EVERYTHING CHANGED" heading scrolls into view
+                let stickyUnlocked = false;
+                const triggerEl = document.getElementById('cc-id-wmP1Dwz77Xz6');
+                if (triggerEl) {
+                    const observer = new IntersectionObserver(function (entries) {
+                        if (entries[0].isIntersecting) {
+                            stickyUnlocked = true;
                             sticky.style.transform = 'translateY(0)';
                             sticky.style.opacity = '1';
+                            observer.disconnect();
                         }
-                    });
-                }, observerOptions);
-                // Start observing
-                observer.observe(trigger);
-                // Handle edge cases like initial load or resize
-                window.addEventListener('resize', () => {
-                    // Re-evaluate on resize (debounced internally by observer)
-                });
+                    }, { threshold: 0 });
+                    observer.observe(triggerEl);
+                }
+                function updateStickyVisibility() {
+                    if (!stickyUnlocked) return;
+                    sticky.style.transform = 'translateY(0)';
+                    sticky.style.opacity = '1';
+                }
+                window.addEventListener('scroll', updateStickyVisibility, { passive: true });
+                window.addEventListener('resize', updateStickyVisibility);
                 // Optional: Disconnect observer on unload to clean up, but usually not necessary
             });
         </script>
