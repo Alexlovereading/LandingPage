@@ -30,6 +30,16 @@
 }
 
 /* ========== Images & Video ========== */
+/* Optimize image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+picture {
+  display: block;
+}
+
 /* Prevent layout shift: declare aspect ratios for videos */
 video {
   border-radius: 10px;

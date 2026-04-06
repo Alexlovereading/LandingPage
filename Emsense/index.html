@@ -21,7 +21,7 @@
     *,*::before,*::after{box-sizing:border-box}
     html{font-size:62.5%;scroll-behavior:smooth}
     body{margin:0;font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-size:1.6rem;line-height:1.7;color:rgba(0,0,0,.75);background:#fff}
-    img,video{max-width:100%;height:auto;display:block}
+    img,video{max-width:100%;height:auto;display:block}img{content-visibility:auto}picture{display:block}
     a{color:inherit}p{margin:0 0 1.2rem}
     h1,h2,h3{font-family:'Montserrat',system-ui,sans-serif;font-weight:700;line-height:1.3;color:#000}
     h1{font-size:2.8rem}h2{font-size:2.4rem;margin:3rem 0 1.5rem}h3{font-size:2rem;margin:2.5rem 0 1rem}
@@ -32,7 +32,7 @@
     .hero h1{font-size:3rem;margin-bottom:1rem}
     .highlight{background-color:rgb(202,217,2);padding:0 4px}
     .meta-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;font-size:1.5rem}
-    .hero-img{border-radius:10px;margin-bottom:2rem;aspect-ratio:1200/948}
+    .hero-img{border-radius:10px;margin-bottom:2rem;aspect-ratio:1200/948;width:100%;height:auto}
     .full-img{border-radius:10px;margin:1.5rem auto;display:block}
     .cta-button{display:inline-block;background-color:#53c60a;color:#fff;font-family:'Montserrat',system-ui,sans-serif;font-size:1.8rem;font-weight:700;text-decoration:none;padding:1.6rem 3.5rem;border-radius:40px;text-align:center;transition:background-color .3s,transform .2s;width:100%;max-width:500px}
     .cta-button:hover{background-color:#47ab09;transform:scale(1.02)}
@@ -66,7 +66,11 @@
         <span class="reviews"><i>⭐⭐⭐⭐⭐ (6,851 reviews)</i></span>
         <span class="views"><i>👁️ Total Views: 127,312</i></span>
       </div>
-      <img src="images/hero.webp" alt="EMSense Product" class="hero-img" width="1200" height="948" fetchpriority="high">
+      <picture>
+    <source media="(max-width: 600px)" srcset="images/hero.webp" type="image/webp" width="600" height="474">
+    <source media="(max-width: 900px)" srcset="images/hero.webp" type="image/webp" width="900" height="711">
+    <img src="images/hero.webp" alt="EMSense Product" class="hero-img" width="1200" height="948" fetchpriority="high" decoding="async">
+  </picture>
     </section>
 
     <!-- Intro -->
@@ -88,7 +92,10 @@
       <p><strong>Can you relate?</strong></p>
     </section>
 
-    <img src="images/pain-illustration.webp" alt="Pain illustration" class="full-img" width="1200" height="793" loading="lazy" decoding="async">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/pain-illustration.webp" type="image/webp" width="600" height="397">
+      <img src="images/pain-illustration.webp" alt="Pain illustration" class="full-img" width="1200" height="793" loading="lazy" decoding="async">
+    </picture>
 
     <!-- Discovery -->
     <section class="discovery">
@@ -99,8 +106,14 @@
       <p>It's called the <a href="https://now.gotopsale.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);" class="green-link"><b>EMSense Foot Massager</b></a>.</p>
     </section>
 
-    <img src="images/product-photo.webp" alt="EMSense Product Photo" class="full-img" width="1200" height="716" loading="lazy" decoding="async">
-    <img src="images/featured.webp" alt="Featured In" class="featured-img" width="600" height="90" loading="lazy" decoding="async">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/product-photo.webp" type="image/webp" width="600" height="358">
+      <img src="images/product-photo.webp" alt="EMSense Product Photo" class="full-img" width="1200" height="716" loading="lazy" decoding="async">
+    </picture>
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/featured.webp" type="image/webp" width="400" height="60">
+      <img src="images/featured.webp" alt="Featured In" class="featured-img" width="600" height="90" loading="lazy" decoding="async">
+    </picture>
 
     <!-- Triple Therapy -->
     <section class="triple-therapy">
@@ -131,8 +144,14 @@
       <p>Especially when they gave me a <u>30-day money-back guarantee.</u></p>
     </section>
 
-    <img src="images/emsense-inuse.webp" alt="EMSense in use" class="full-img" width="1200" height="754" loading="lazy" decoding="async">
-    <img src="images/testimonial.webp" alt="Customer testimonial" class="full-img" width="1000" height="723" loading="lazy" decoding="async" style="max-width:85%;">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/emsense-inuse.webp" type="image/webp" width="600" height="377">
+      <img src="images/emsense-inuse.webp" alt="EMSense in use" class="full-img" width="1200" height="754" loading="lazy" decoding="async">
+    </picture>
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/testimonial.webp" type="image/webp" width="500" height="362">
+      <img src="images/testimonial.webp" alt="Customer testimonial" class="full-img" width="1000" height="723" loading="lazy" decoding="async" style="max-width:85%;">
+    </picture>
 
     <p class="section-text">I tried EMSense for 2 weeks.</p>
     <hr class="separator">
@@ -149,7 +168,10 @@
       <p><u>There's no pain</u> — just a light tingling sensation as the pulses start.</p>
       <p>If your nerves have been dulled for a while, the sensation may feel a bit unusual at first..</p>
 
-      <img src="images/day1.webp" alt="Day 1" class="full-img" width="1200" height="793" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/day1.webp" type="image/webp" width="600" height="397">
+        <img src="images/day1.webp" alt="Day 1" class="full-img" width="1200" height="793" loading="lazy" decoding="async">
+      </picture>
 
       <p><u><strong>After first session:</strong></u> To my surprise, the usual burning and tingling I feel when sitting still was noticeably calmer.</p>
       <p>My feet felt lighter, warm, and soothed.</p>
@@ -171,7 +193,10 @@
       <p>I began using EMSense once during the day and again before bed.</p>
       <p>Already, the pain was less and less each day.</p>
 
-      <img src="images/day3.webp" alt="Day 3" class="full-img" width="1200" height="750" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/day3.webp" type="image/webp" width="600" height="375">
+        <img src="images/day3.webp" alt="Day 3" class="full-img" width="1200" height="750" loading="lazy" decoding="async">
+      </picture>
 
       <h3><u>DAY 7:</u></h3>
       <p>Yesterday, something incredible happened — <u>I went grocery shopping and walked the entire store</u> without needing to sit down.</p>
@@ -193,7 +218,10 @@
       <p>I've even started doing light stretches in the morning — <u><strong>something I hadn't done in years.</strong></u></p>
       <p>My mood is better, and I don't feel mentally drained all the time.</p>
 
-      <img src="images/day14.webp" alt="Day 14" class="full-img" width="1200" height="795" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/day14.webp" type="image/webp" width="600" height="398">
+        <img src="images/day14.webp" alt="Day 14" class="full-img" width="1200" height="795" loading="lazy" decoding="async">
+      </picture>
 
       <p class="centered"><i>Today, I was finally able to take my little buddy out for a 30-minute walk, completely pain-free!</i></p>
 
@@ -203,7 +231,10 @@
 
       <p class="centered"><i><strong>EMSense helps stimulate blood flow, deliver nutrients to nerves, and block pain signals — giving your body a chance to repair itself naturally. If you're struggling with neuropathy, burning feet, or poor circulation, this device is for you.</strong></i></p>
 
-      <img src="images/benefits.webp" alt="EMSense benefits" class="full-img" width="1200" height="681" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/benefits.webp" type="image/webp" width="600" height="341">
+        <img src="images/benefits.webp" alt="EMSense benefits" class="full-img" width="1200" height="681" loading="lazy" decoding="async">
+      </picture>
     </section>
 
     <hr class="separator">
@@ -241,14 +272,20 @@
       <p><strong>Each device is carefully built from premium components, and thoroughly tested before shipping.</strong></p>
       <p>As a result, our stock is extremely limited - and every time we open up orders, they tend to sell out fast.</p>
 
-      <img src="images/limited-stock.webp" alt="Limited stock" class="full-img" width="1200" height="644" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/limited-stock.webp" type="image/webp" width="600" height="322">
+        <img src="images/limited-stock.webp" alt="Limited stock" class="full-img" width="1200" height="644" loading="lazy" decoding="async">
+      </picture>
 
       <h2><u>You Won't Find EMSense in Stores</u></h2>
       <p>It's not available in Walmart, Target, Amazon, or anywhere else.</p>
       <p>The authentic <a href="https://now.gotopsale.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);" class="green-link"><b>EMSense Triple Therapy Massager</b></a> can only be ordered through our official website.</p>
       <p>Right now, you can <u>get yours for just $49.99</u> - far less than the price of a single therapy session at a clinic.</p>
 
-      <img src="images/price-comparison.webp" alt="Price comparison" class="full-img" width="1200" height="703" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/price-comparison.webp" type="image/webp" width="600" height="352">
+        <img src="images/price-comparison.webp" alt="Price comparison" class="full-img" width="1200" height="703" loading="lazy" decoding="async">
+      </picture>
     </section>
 
     <!-- Final Thoughts -->
@@ -257,7 +294,10 @@
       <p><strong>The EMSense Foot Massager has truly transformed my life, and I couldn't be happier with the results.</strong></p>
       <p>It's now an essential part of my daily routine, helping me <u>feel better and making me confident</u> about staying active as I age.</p>
 
-      <img src="images/lifestyle.webp" alt="EMSense lifestyle" class="full-img" width="1200" height="800" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/lifestyle.webp" type="image/webp" width="600" height="400">
+        <img src="images/lifestyle.webp" alt="EMSense lifestyle" class="full-img" width="1200" height="800" loading="lazy" decoding="async">
+      </picture>
 
       <p>If you suffer from neuropathy, nerve pain, or restless legs and are searching for a natural, drug-free solution, I highly recommend you try the <a href="https://now.gotopsale.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);" class="green-link"><b>EMSense Massager.</b></a></p>
       <p><strong>This is the easiest and most affordable way to calm nerve pain, boost circulation, and sleep better.</strong></p>
@@ -269,7 +309,10 @@
       <p>So if I were you, I'd definitely grab one while they're available!</p>
       <p>Click the link below to check availability and see if the discount is still active.</p>
 
-      <img src="images/box.webp" alt="EMSense box" class="box-img" width="800" height="800" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/box.webp" type="image/webp" width="400" height="400">
+        <img src="images/box.webp" alt="EMSense box" class="box-img" width="800" height="800" loading="lazy" decoding="async">
+      </picture>
 
       <!-- CTA Button -->
       <div id="cta" class="cta-wrapper">
@@ -284,7 +327,10 @@
     <!-- Comments -->
     <section class="comments">
       <h2>Comments:</h2>
-      <img src="images/comments.webp" alt="Facebook comments" class="comments-img" width="800" height="649" loading="lazy" decoding="async">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/comments.webp" type="image/webp" width="600" height="487">
+        <img src="images/comments.webp" alt="Facebook comments" class="comments-img" width="800" height="649" loading="lazy" decoding="async">
+      </picture>
     </section>
 
     <!-- FAQ -->
@@ -299,7 +345,10 @@
           </button>
           <div class="accordion-content" role="region">
             <p>Relief from burning, tingling, and numbness. The EMSense Foot Massager is designed to boost circulation, calm nerve pain, and reduce daily discomfort. Its dual-action EMS + TENS technology stimulates your muscles, delivers oxygen-rich blood to your nerves, and helps block pain signals — supporting faster recovery and healthier feet over time.</p>
-            <img src="images/faq-benefits.webp" alt="Benefits" class="full-img" width="1200" height="334" loading="lazy" decoding="async">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/faq-benefits.webp" type="image/webp" width="600" height="167">
+              <img src="images/faq-benefits.webp" alt="Benefits" class="full-img" width="1200" height="334" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
 
@@ -320,7 +369,10 @@
           </button>
           <div class="accordion-content" role="region">
             <p>Many users report noticeable relief after just one session, especially from burning, tingling, or numbness. As with everything, consistent use over time will bring most benefits, such as longer-lasting improvement in circulation, neuropathy and nerve comfort.</p>
-            <img src="images/results-timeline.webp" alt="Results timeline" class="full-img" width="1000" height="498" loading="lazy" decoding="async" style="max-width:85%;">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/results-timeline.webp" type="image/webp" width="500" height="249">
+              <img src="images/results-timeline.webp" alt="Results timeline" class="full-img" width="1000" height="498" loading="lazy" decoding="async" style="max-width:85%;">
+            </picture>
           </div>
         </div>
 
@@ -361,7 +413,10 @@
           </button>
           <div class="accordion-content" role="region">
             <p>Of course! The company offers a 30-day money back guarantee so if, for whatever reason, the massager is not the right fit for you, you can return it for a full refund, hassle-free.</p>
-            <img src="images/return-policy.webp" alt="Return policy" class="full-img" width="1200" height="631" loading="lazy" decoding="async">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/return-policy.webp" type="image/webp" width="600" height="316">
+              <img src="images/return-policy.webp" alt="Return policy" class="full-img" width="1200" height="631" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
       </div>
@@ -372,7 +427,10 @@
   <!-- Sidebar -->
   <aside class="sidebar">
     <h2>Sponsored by:</h2>
-    <img src="images/sidebar-product.webp" alt="EMSense product" class="sidebar-product-img" width="400" height="402" loading="lazy" decoding="async">
+    <picture>
+      <source media="(max-width: 600px)" srcset="images/sidebar-product.webp" type="image/webp" width="300" height="302">
+      <img src="images/sidebar-product.webp" alt="EMSense product" class="sidebar-product-img" width="400" height="402" loading="lazy" decoding="async">
+    </picture>
     <a href="https://now.gotopsale.com/click" target="_blank" onclick="setTimeout(function() { window.location = 'https://fivoraco.com/house/best-spring-home-procucts-to-transform-your-space-in-2026/'; }, 100);" class="cta-button sidebar-cta">TRY RISK-FREE!</a>
   </aside>
 </div>
